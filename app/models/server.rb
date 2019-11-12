@@ -7,5 +7,4 @@ class Server < ApplicationRecord
     foreign_key: :admin_id,
     class_name: 'User'
 
-
 end
