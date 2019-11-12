@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+.login-errors {
+  padding-top:10px;
+  font-size: 12px;
+  text-align: center;
+  color: red;
+}
+
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 10%;
+  width: 80%;
+}
+
+.login-form {
+  padding: 50px;
+  background-color: rgb(57, 55, 59);
+  border-radius: 3px;
+}
+
+.login-params {
+  width: 240px;
+  padding: 5px;
+  color: white;
+  background: rgb(75, 72, 77);
+  margin: 10px;
+  border-radius: 3px;
+}
+
+.session-link {
+  color: rgb(175, 175, 175);
+  text-align: center;
+  font-size: 15px;
+  font-family: Helvetica;
+  font-weight: 200;
+  padding-top: 20px;
+}
+
+.login-greeting {
+  font-family: Helvetica;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.login-signup {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+  justify-content: center;
+  font-family: Helvetica;
+  width: 90%;
+  left: 5%;
+  height: 30%;
+  top: 10%
+}
+
+.session-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.login-button {
+  font-family: Helvetica;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  width: 130px;
+  position: relative;
+  align-items: center;
+  background: #43b581;
+  padding: 15px;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin: 10px;
+  border-radius: 3px;
+}
+
+.login-button:hover {
+  top: 2px;
+}
+
+.signup-button {
+  font-family: Helvetica;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  width: 130px;
+  position: relative;
+  align-items: center;
+  background: #7289da;
+  padding: 15px;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin: 10px;
+  border-radius: 3px;
+
+}
+
+.signup-button:hover {
+  top: 2px;
+}
+
+.intro {
+ font-weight: 700;
+ font-size: 36px;
+ padding: 10px;
+}
+
+.subIntro {
+  color: #737f8d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

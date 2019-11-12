@@ -5,7 +5,6 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: '',
-      email: '',
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,37 +38,32 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Discord!
           <br/>
-          Please {this.props.formType} or {this.props.navLink}
-          {this.renderErrors()}
           <div className="login-form">
+            <h1 className="login-greeting">Welcome To Discord-Clone</h1>
+            <h1 className="login-errors">{this.renderErrors()}</h1>
             <br/>
-            <label>Username:
+            <label>
               <input type="text"
+                placeholder="Username"
                 value={this.state.username}
                 onChange={this.update('username')}
-                className="login-input"
+                className="login-params"
               />
             </label>
             <br/>
-            <label>Email:
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className="login-input"
-              />
-            </label>
-            <br />
-            <label>Password:
+            <label>
               <input type="password"
                 value={this.state.password}
+                placeholder="Password"
                 onChange={this.update('password')}
-                className="login-input"
+                className="login-params"
               />
             </label>
             <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            <input className={this.props.formType.toLowerCase() + '-button'} type="submit" value={this.props.formType} />
+            <h1 className="session-link">{this.props.navLink}</h1>
+
           </div>
         </form>
       </div>
