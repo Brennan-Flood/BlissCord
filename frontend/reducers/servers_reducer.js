@@ -1,6 +1,6 @@
 import { RECEIVE_ALL_SERVERS, RECEIVE_SERVER, REMOVE_SERVER } from '../actions/server_actions';
 
-const ServerReducer = (state = {}, action) => {
+const ServersReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch (action.type) {
@@ -15,3 +15,5 @@ const ServerReducer = (state = {}, action) => {
       return state;
   }
 }
+
+export default ServersReducer

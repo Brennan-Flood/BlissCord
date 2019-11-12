@@ -21,7 +21,7 @@ const removeServer = (serverId) => ({
 
 export const fetchServers = () => (dispatch) => {
   return ServerUtil.fetchServers()
-  .then(servers => dispatch(receiveAllServers(server)))
+  .then(servers => dispatch(receiveAllServers(servers)))
 }
 
 export const fetchServer = (serverId) => (dispatch) => {
