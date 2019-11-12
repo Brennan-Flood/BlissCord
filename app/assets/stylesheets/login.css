@@ -31,12 +31,13 @@
 }
 
 .session-link {
-  color: rgb(175, 175, 175);
+  color: rgb(155, 139, 211);
   text-align: center;
   font-size: 15px;
   font-family: Helvetica;
   font-weight: 200;
   padding-top: 20px;
+
 }
 
 .login-greeting {

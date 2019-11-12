@@ -22,6 +22,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
     </Switch>
+    <footer className="main-footer"><h1 className="my-email">flood.brennan@gmail.com</h1></footer>
   </div>
 );
 

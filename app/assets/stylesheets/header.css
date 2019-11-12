@@ -5,8 +5,27 @@
 .header-link {
   display: inline-block;
   width: 140px;
-  height: 50px;
+  height: 20px;
   padding: 15px;
-  margin-top: 10px;
+  margin-top: 0px;
   font-weight: 700;
 }
+
+.main-footer {
+  color: rgb(128, 128, 128);
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  position: absolute;
+  bottom: 0;
+  font-size: 14px;
+  padding-right: 10px;
+  padding: 5px;
+  border-top: 1px solid rgb(53, 53, 53);
+}
+
+.my-email {
+  padding-right: 10px;
+}
+

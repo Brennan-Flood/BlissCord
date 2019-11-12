@@ -196,7 +196,11 @@ var App = function App() {
     exact: true,
     path: "/signup",
     component: _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-  })));
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
+    className: "main-footer"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "my-email"
+  }, "flood.brennan@gmail.com")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
