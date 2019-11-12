@@ -12,9 +12,9 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <header className="main_header">
-      <Link to="/" className="header-link">
-        <h1>Discord Clone</h1>
+    <header className="main-header">
+      <Link to="/" >
+        <h1 className="header-link" >Discord Clone</h1>
       </Link>
       <Route exact path="/" component={GreetingContainer} />
     </header>

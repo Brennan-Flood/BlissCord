@@ -4,18 +4,14 @@ import { Link } from 'react-router-dom';
 import { signup } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
-const mapStateToProps = ({ errors }) => {
-  return {
+const mapStateToProps = ({ errors }) => ({
     errors: errors.session,
     formType: 'Signup',
     navLink: <Link to="/login">Login instead</Link>,
-  };
-};
+})
 
-const mapDispatchToProps = dispatch => {
-  return {
+const mapDispatchToProps = dispatch => ({
     processForm: (user) => dispatch(signup(user)),
-  };
-};
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);

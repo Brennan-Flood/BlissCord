@@ -1,0 +1,12 @@
+.main-header {
+
+}
+
+.header-link {
+  display: inline-block;
+  width: 140px;
+  height: 50px;
+  padding: 15px;
+  margin-top: 10px;
+  font-weight: 700;
+}
