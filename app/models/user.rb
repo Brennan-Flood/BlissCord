@@ -7,6 +7,11 @@ class User < ApplicationRecord
   
   after_initialize :ensure_session_token
 
+  has_many :servers,
+    primary_key: :id,
+    foreign_key: :admin_id,
+    class_name: 'Server'
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user
