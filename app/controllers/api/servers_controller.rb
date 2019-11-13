@@ -1,16 +1,14 @@
 class Api::ServersController < ApplicationController
 
   def create
-    if current_user.id != server_params[:admin_id]
-      render json: ["You must be signed in to create a server"], status: 422
-    else
+  
     @server = Server.new(server_params)
       if @server.save
         render :show
       else
         render json: @server.errors.full_messages, status: 422
       end
-    end
+    
   end
 
   def show

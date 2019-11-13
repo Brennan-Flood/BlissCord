@@ -2,15 +2,25 @@ import React from 'react';
 import ServerIndexItem from './server_index_item';
 import { Link } from 'react-router-dom';
 import ServerCreateFormContainer from './server_form/server_create_form_container'
+import ServerForm from './server_form/server_form';
 
 class ServerIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.creatingServer = false;
+    this.toggleHide = this.toggleHide.bind(this);
+    this.state = {hide: true};
   }
 
   componentDidMount() {
     this.props.fetchServers();
   }
+
+  toggleHide() {
+    this.setState({hide: !this.state.hide})
+  }
+
+  
 
   render() {
     let { servers } = this.props;
@@ -29,7 +39,11 @@ class ServerIndex extends React.Component {
         </li> 
          )})}
       </ul>
-      <ServerCreateFormContainer />
+      
+      <button onClick={this.toggleHide}>
+        Create Server
+      </button>
+        {!this.state.hide && <ServerCreateFormContainer/>}
     </div>)
   }
 }

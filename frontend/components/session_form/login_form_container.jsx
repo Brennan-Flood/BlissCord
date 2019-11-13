@@ -8,6 +8,7 @@ const mapStateToProps = ({ errors }) => ({
     errors: errors.session,
     formType: 'Login',
     navLink: <Link to="/signup">Signup Instead</Link>,
+
 });
 
 const mapDispatchToProps = dispatch => ({

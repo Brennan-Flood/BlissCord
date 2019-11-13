@@ -1,12 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-class SessionForm extends React.Component {
+
+
+class DemoLoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: ''
+      username: this.props.demoUser.username,
+      password: this.props.demoUser.password
     };
+    
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -20,32 +22,14 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  renderErrors() {
-    let errors = this.props.errors;
-
-    return(
-      <ul>
-        {errors.map((error, i) => (
-          <li 
-          key={`error-${i}`}>
-          {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
-
   render() {
     return (
       <div className="login-form-container">
-      <Link to="/demologin">sign in as demo user</Link>
-
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <br/>
+          <br />
           <div className="login-form">
             <h1 className="login-greeting">Welcome To Discord-Clone</h1>
-            <h1 className="login-errors">{this.renderErrors()}</h1>
-            <br/>
+            <br />
             <label>
               <input type="text"
                 placeholder="Username"
@@ -54,7 +38,7 @@ class SessionForm extends React.Component {
                 className="login-params"
               />
             </label>
-            <br/>
+            <br />
             <label>
               <input type="password"
                 value={this.state.password}
@@ -63,10 +47,8 @@ class SessionForm extends React.Component {
                 className="login-params"
               />
             </label>
-            <br/>
-            <input className={this.props.formType.toLowerCase() + '-button'} type="submit" value={this.props.formType} />
-            <h1 className="session-link">{this.props.navLink}</h1>
-
+            <br />
+            <input className='login-button' type="submit" value="Login" />
           </div>
         </form>
       </div>
@@ -74,4 +56,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default DemoLoginForm;
