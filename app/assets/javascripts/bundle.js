@@ -952,12 +952,17 @@ function (_React$Component) {
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: this.props.server.id,
         className: "server-icon"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "server-initials"
-      }, serverInitials), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "server-title"
-      }, this.props.server.title));
+      }, serverInitials), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "server-hover"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "server-name"
+      }, this.props.server.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "server-name-tag"
+      })));
     }
   }]);
 

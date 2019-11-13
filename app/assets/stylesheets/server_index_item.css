@@ -14,9 +14,48 @@
   background-color: #7289da;
 }
 
+.server-name {
+  visibility: hidden;
+  display: inline-block;
+  text-align: start;
+  position: relative;
+  top: -33px;
+  left: 65px;
+  vertical-align: middle;
+  background-color: black;
+  padding: 5px;
+  width: 100px;
+  border-radius: 8px;
+}
+
+.server-name-tag {
+  visibility: hidden;
+  width: 10px;
+  height: 8px;
+  background-color: black;
+  position: relative;
+  top: -52px;
+  left: 60px;
+  border-radius: 80px;
+}
+.server-icon:hover .server-name-tag {
+  visibility: visible;
+}
+
+.server-icon:hover .server-name {
+  visibility: visible;
+}
+
 .server-initials {
   margin: 10px;
   padding-top: 18px;
+}
+
+.server-name {
+  display: hidden;
+}
+.server-name:hover {
+  display: inline-block;
 }
 
 .create-server-button {
@@ -37,3 +76,4 @@
   border-radius: 30%;
   background-color: #43b581;
 }
+
