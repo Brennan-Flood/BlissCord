@@ -1,0 +1,11 @@
+.server-index-container {
+  top: 0px;
+  display: block;
+  width: 60px;
+  height: 100%;
+  border-right: 1px solid rgb(53, 53, 53);
+}
+
+.main-content {
+  height: 100%;
+}

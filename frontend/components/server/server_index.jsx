@@ -25,24 +25,22 @@ class ServerIndex extends React.Component {
   render() {
     let { servers } = this.props;
     return (
-    <div>
-      <header className="logout-button">
-          <Link to="/"><button onClick={this.props.logout}>logout</button></Link>
-      </header>
-      <h1>Server Index</h1>
-      <ul>
+    <div className="server-index-container">
+      <ul className="server-list">
       {servers.map((server) => {
-        return ( <li key={server.id}><ServerIndexItem
+        return (
+        <ServerIndexItem
          className="server-icon" 
          server={server} 
          />
-        </li> 
          )})}
+      <button className="create-server-button" onClick={this.toggleHide}>
+            +
+      </button>
       </ul>
       
-      <button onClick={this.toggleHide}>
-        Create Server
-      </button>
+     
+
         {!this.state.hide && <ServerCreateFormContainer/>}
     </div>)
   }

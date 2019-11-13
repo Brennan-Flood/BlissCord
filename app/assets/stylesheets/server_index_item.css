@@ -1,0 +1,39 @@
+.server-icon {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(72, 69, 73);
+  border-radius: 100%;
+  text-align: center;
+  vertical-align: middle;
+  margin: 5px;
+}
+
+.server-icon:hover {
+  color: white;
+  border-radius: 17px;
+  background-color: #7289da;
+}
+
+.server-initials {
+  margin: 10px;
+  padding-top: 18px;
+}
+
+.create-server-button {
+  color: #43b581;
+  height: 50px;
+  width: 50px;
+  background-color: rgb(72, 69, 73);
+  border-radius: 100%;
+  text-align: center;
+  vertical-align: middle;
+  margin: 5px;
+  font-size: 40px;
+  font-weight: 100;
+}
+
+.create-server-button:hover {
+  color: white;
+  border-radius: 30%;
+  background-color: #43b581;
+}

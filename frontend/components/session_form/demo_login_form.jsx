@@ -25,6 +25,7 @@ class DemoLoginForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
+        <img className="background-image" src="/images/login-background.jpg"></img>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br />
           <div className="login-form">
@@ -36,6 +37,7 @@ class DemoLoginForm extends React.Component {
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-params"
+                disabled
               />
             </label>
             <br />
@@ -45,6 +47,7 @@ class DemoLoginForm extends React.Component {
                 placeholder="Password"
                 onChange={this.update('password')}
                 className="login-params"
+                disabled
               />
             </label>
             <br />

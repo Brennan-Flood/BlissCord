@@ -1,0 +1,57 @@
+.create-server-form {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  display: block;
+  width: 50%;
+  height: 40%;
+  background-color: white;
+  left: 30%;
+  top: 20%;
+  border-radius: 5px;
+}
+
+.create-server-title {
+  color: #7289da;
+  font-weight: 700;
+  width: 100%;
+  padding-top: 20px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.create-server-input {
+  color: rgb(72, 69, 73);
+  width: 60%;
+  left: 20%;
+  padding-top: 20px;
+  position: relative;
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 0px;
+  border-bottom: 2px solid rgb(72, 69, 73);
+}
+
+.submit-server-button {
+  width: 40%;
+  left: 25%;
+  text-align: center;
+  font-family: Helvetica;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  vertical-align: middle;
+  background: #7289da;
+  border-radius: 3px;
+  padding: 5%;
+  bottom: -30%;
+}
+
+.create-server-background {
+  position: relative;
+  opacity: 0.5;
+  width: 35px;
+  height: 20px;
+  padding: 5px;
+}

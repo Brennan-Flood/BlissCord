@@ -1,0 +1,18 @@
+.main-footer {
+  color: rgb(128, 128, 128);
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  font-size: 14px;
+  position: absolute;
+  padding-right: 10px;
+  padding: 5px;
+  border-top: 1px solid rgb(53, 53, 53);
+  background-color: rgb(40, 38, 41);
+  bottom: 0%;
+}
+
+.my-email {
+  padding-right: 10px;
+}

@@ -1,0 +1,9 @@
+.page-container {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(40, 38, 41);
+  overflow: hidden;
+
+}

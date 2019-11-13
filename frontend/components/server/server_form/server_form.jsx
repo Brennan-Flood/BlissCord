@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 class ServerForm extends React.Component {
   constructor(props) {
     super(props)
@@ -19,18 +19,21 @@ class ServerForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="create-server-form" >
-        <h1>Create a New Server</h1>
+      <form onSubmit={this.handleSubmit} 
+      className="create-server-form" 
+      >
+        <img className="create-server-background" src="/images/discord-logo.png" />
+        <h1 className="create-server-title">OH, ANOTHER SERVER HUH?</h1>
 
         <input 
         className="create-server-input"
         type="text"
         onChange={this.update('name')}
         value={this.state.name}
-        placeholder='name'
+        placeholder='Enter a Server Name'
         />
 
-        <button className="create-server-button">Create Server</button>
+        <button className="submit-server-button">Create Server</button>
       </form>
     )
   }
