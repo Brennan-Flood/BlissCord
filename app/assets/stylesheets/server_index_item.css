@@ -6,6 +6,7 @@
   text-align: center;
   vertical-align: middle;
   margin: 5px;
+  transition: 0.3s;
 }
 
 .server-icon:hover {
@@ -69,6 +70,8 @@
   margin: 5px;
   font-size: 40px;
   font-weight: 100;
+  transition: 0.3s;
+
 }
 
 .create-server-button:hover {
