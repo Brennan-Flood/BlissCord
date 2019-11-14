@@ -86,6 +86,88 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/channel_actions.js":
+/*!*********************************************!*\
+  !*** ./frontend/actions/channel_actions.js ***!
+  \*********************************************/
+/*! exports provided: RECEIVE_ALL_CHANNELS, RECEIVE_CHANNEL, REMOVE_CHANNEL, fetchChannels, fetchChannel, createChannel, updateChannel, deleteChannel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_CHANNELS", function() { return RECEIVE_ALL_CHANNELS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CHANNEL", function() { return RECEIVE_CHANNEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_CHANNEL", function() { return REMOVE_CHANNEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchChannels", function() { return fetchChannels; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchChannel", function() { return fetchChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createChannel", function() { return createChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateChannel", function() { return updateChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteChannel", function() { return deleteChannel; });
+/* harmony import */ var _util_channel_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/channel_util */ "./frontend/util/channel_util.js");
+
+var RECEIVE_ALL_CHANNELS = 'RECEIVE_ALL_CHANNELS';
+var RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
+var REMOVE_CHANNEL = 'REMOVE_CHANNEL';
+
+var receiveAllChannels = function receiveAllChannels(channels) {
+  return {
+    type: RECEIVE_ALL_CHANNELS,
+    channels: channels
+  };
+};
+
+var receiveChannel = function receiveChannel(channel) {
+  return {
+    type: RECEIVE_CHANNEL,
+    channel: channel
+  };
+};
+
+var removeChannel = function removeChannel(channelId) {
+  return {
+    type: REMOVE_CHANNEL,
+    channelId: channelId
+  };
+};
+
+var fetchChannels = function fetchChannels(serverId) {
+  return function (dispatch) {
+    return _util_channel_util__WEBPACK_IMPORTED_MODULE_0__["fetchChannels"](serverId).then(function (channels) {
+      return dispatch(receiveAllChannels(channels));
+    });
+  };
+};
+var fetchChannel = function fetchChannel(serverId, channelId) {
+  return function (dispatch) {
+    return _util_channel_util__WEBPACK_IMPORTED_MODULE_0__["fetchChannel"](serverId, channelId).then(function (channel) {
+      return dispatch(receiveChannel(channel));
+    });
+  };
+};
+var createChannel = function createChannel(serverId, channel) {
+  return function (dispatch) {
+    return _util_channel_util__WEBPACK_IMPORTED_MODULE_0__["createChannel"](serverId, channel).then(function (channel) {
+      return dispatch(receiveChannel(channel));
+    });
+  };
+};
+var updateChannel = function updateChannel(serverId, channel) {
+  return function (dispatch) {
+    return _util_channel_util__WEBPACK_IMPORTED_MODULE_0__["updateChannel"](serverId, channel).then(function (channel) {
+      return dispatch(receiveChannel(channel));
+    });
+  };
+};
+var deleteChannel = function deleteChannel(serverId, channelId) {
+  return function (dispatch) {
+    return _util_channel_util__WEBPACK_IMPORTED_MODULE_0__["deleteChannel"](serverId, channelId).then(function (channelId) {
+      return dispatch(removeChannel(channelId));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/server_actions.js":
 /*!********************************************!*\
   !*** ./frontend/actions/server_actions.js ***!
@@ -1689,6 +1771,46 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
+/***/ "./frontend/reducers/channels_reducer.js":
+/*!***********************************************!*\
+  !*** ./frontend/reducers/channels_reducer.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_channel_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/channel_actions */ "./frontend/actions/channel_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var ChannelsReducer = function ChannelsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_channel_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_CHANNELS"]:
+      return action.channels;
+
+    case _actions_channel_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CHANNEL"]:
+      return Object.assign({}, state, _defineProperty({}, action.channel.id, action.channel));
+
+    case _actions_channel_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_CHANNEL"]:
+      var nextState = Object.assign({}, state);
+      delete nextState[action.channelId];
+      return nextState;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ChannelsReducer);
+
+/***/ }),
+
 /***/ "./frontend/reducers/entities_reducer.js":
 /*!***********************************************!*\
   !*** ./frontend/reducers/entities_reducer.js ***!
@@ -1701,12 +1823,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var _servers_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./servers_reducer */ "./frontend/reducers/servers_reducer.js");
+/* harmony import */ var _channels_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./channels_reducer */ "./frontend/reducers/channels_reducer.js");
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  servers: _servers_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  servers: _servers_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  channels: _channels_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 }));
 
 /***/ }),
@@ -1921,6 +2046,57 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/channel_util.js":
+/*!***************************************!*\
+  !*** ./frontend/util/channel_util.js ***!
+  \***************************************/
+/*! exports provided: fetchChannels, fetchChannel, createChannel, updateChannel, deleteChannel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchChannels", function() { return fetchChannels; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchChannel", function() { return fetchChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createChannel", function() { return createChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateChannel", function() { return updateChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteChannel", function() { return deleteChannel; });
+var fetchChannels = function fetchChannels(serverId) {
+  return $.ajax({
+    url: "/api/servers/".concat(serverId, "/channels")
+  });
+};
+var fetchChannel = function fetchChannel(serverId, channelId) {
+  return $.ajax({
+    url: "/api/servers/".concat(serverId, "/channels/").concat(channelId)
+  });
+};
+var createChannel = function createChannel(serverId, channel) {
+  return $.ajax({
+    method: 'POST',
+    url: "/api/servers/".concat(serverId, "/channels"),
+    data: {
+      channel: channel
+    }
+  });
+};
+var updateChannel = function updateChannel(serverId, channel) {
+  return $.ajax({
+    method: 'PATCH',
+    url: "/api/servers/".concat(serverId, "/channels/").concat(channel.id),
+    data: {
+      channel: channel
+    }
+  });
+};
+var deleteChannel = function deleteChannel(serverId, channelId) {
+  return $.ajax({
+    method: 'DELETE',
+    url: "/api/servers/".concat(serverId, "/channels/").concat(channelId)
+  });
+};
 
 /***/ }),
 
