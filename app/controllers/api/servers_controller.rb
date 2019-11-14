@@ -35,15 +35,11 @@ class Api::ServersController < ApplicationController
 
   def update
     @server = Server.find(params[:id])
-    if current_user.id == @server.admin_id
-      if @server.update!(server_params[:name])
+      if @server.update!(server_params)
         render :show
       else
         render json: @server.errors.full_messages, status: 422
       end
-    else
-      render json: ["You do not own this server, thus can't edit it"]
-    end
   end
 
   private

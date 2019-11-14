@@ -1,13 +1,15 @@
 import React from 'react';
 import { ProtectedRoute } from '../../util/route_util';
 import ChannelIndexContainer from '../channel/channel_index_container';
+import EditServerForm from './server_form/server_edit_form_container'
 
 class ServerShow extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {hide: true}
+    this.state = {hide: true, edit: false}
     this.handleDelete = this.handleDelete.bind(this);
     this.toggleHide = this.toggleHide.bind(this);
+    this.toggleEdit = this.toggleEdit.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -26,6 +28,13 @@ class ServerShow extends React.Component {
     this.setState({hide: !this.state.hide});
   }
 
+  toggleEdit() {
+    this.setState({edit: !this.state.edit})
+    if (this.state.hide !== true) {
+      this.toggleHide()
+    }
+  }
+
   render() {
     if (!this.props.server) {
       return null;
@@ -33,7 +42,15 @@ class ServerShow extends React.Component {
 
     const serverOptions = (
       <div className="server-options">
-        <button className="delete-server-button" onClick={this.handleDelete}>Delete Server</button>
+        <button className="delete-server-button" onClick={this.handleDelete}>
+          Delete Server
+        </button>
+
+        <button className="edit-server-button" onClick={this.toggleEdit}>
+          Edit Server
+        </button>
+          
+        
       </div>
     )
 
@@ -48,7 +65,7 @@ class ServerShow extends React.Component {
         <h1 className="channel-header">Text Channels</h1>
         <ChannelIndexContainer serverId={this.props.server.id}/>
         { this.state.hide || serverOptions }  
-
+        {this.state.edit && <EditServerForm toggleEdit={this.toggleEdit} server={this.props.server}/>}
       </div>
     )
   }
