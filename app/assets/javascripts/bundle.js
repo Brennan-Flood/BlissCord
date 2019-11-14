@@ -955,7 +955,7 @@ function (_React$Component) {
         alt: ""
       })))), !this.state.hide && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_server_form_server_create_form_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
         toggleHide: this.toggleHide
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Switch, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_6__["ProtectedRoute"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_6__["ProtectedRoute"], {
         path: '/home/explore',
         component: _server_explore_container__WEBPACK_IMPORTED_MODULE_7__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_6__["ProtectedRoute"], {
