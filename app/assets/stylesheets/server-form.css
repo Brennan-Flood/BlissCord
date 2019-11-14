@@ -9,6 +9,7 @@
   left: 30%;
   top: 20%;
   border-radius: 5px;
+  z-index: 10;
 }
 
 .create-server-title {

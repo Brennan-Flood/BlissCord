@@ -29,6 +29,6 @@ export const updateServer = (server) => {
 export const deleteServer = (serverId) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/servers${serverId}`,
+    url: `/api/servers/${serverId}`,
   })
 }

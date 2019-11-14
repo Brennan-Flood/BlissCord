@@ -4,6 +4,9 @@ import { connect } from 'react-redux'
 import { logout } from '../actions/session_actions'
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props)
+  }
   render() {
     return (
     <header className="main-header">
@@ -11,7 +14,11 @@ class Header extends React.Component {
         <h1 className="header-link" >Discord Clone</h1>
       </Link>
       
-      <Link to="/"><button onClick={this.props.logout}>logout</button></Link>
+        {!this.props.currentUser || 
+        <Link to="/" onClick={this.props.logout}>
+          <img className="logout-image" src="/images/logout.png" alt=""/>
+        </Link>
+        }
         
     </header>
     )
@@ -19,7 +26,7 @@ class Header extends React.Component {
 }
 
 const msp = (state) => ({
-
+  currentUser: state.entities.users[state.session.id]
 })
 
 const mdp = (dispatch) => ({

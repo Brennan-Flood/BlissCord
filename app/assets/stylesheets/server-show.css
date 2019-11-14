@@ -1,0 +1,49 @@
+.server-show-container {
+  display: inline-block;
+  width: 250px;
+  max-height: 100%;
+  min-height: 700px;
+  border-right: 1px solid rgb(53, 53, 53);
+  background-color: rgb(53, 53, 53);
+}
+
+.server-header {
+  display: flex;
+  border-bottom: 1px solid rgb(39, 38, 41);
+  justify-content: space-between;
+}
+
+.server-main-name {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.server-options {
+  background-color: rgb(26, 25, 27);
+  padding: 30px;
+  position: relative;
+  left: 8%;
+  top: -40px;
+  height: 200px;
+  width: 150px;
+  border-radius: 5px;
+}
+
+.server-options-dropdown-button {
+  padding: 20px;
+  font-weight: 100;
+  transform: scale(1.5, 1);
+}
+
+.channel-header {
+  padding: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.delete-server-button {
+  color: red; 
+}

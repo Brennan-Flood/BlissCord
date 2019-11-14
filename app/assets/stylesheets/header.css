@@ -2,6 +2,7 @@
   border-bottom: 1px solid rgb(53, 53, 53);
   display: flex;
   justify-content: space-between;
+  align-items: middle;
 }
 
 .header-link {
@@ -14,5 +15,10 @@
   font-weight: 700;
 }
 
+.logout-image {
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+}
 
 

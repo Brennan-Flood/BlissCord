@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 class ServerForm extends React.Component {
   constructor(props) {
     super(props)
@@ -9,13 +10,15 @@ class ServerForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state)
-    this.props.createServer(this.state);
+    this.props.createServer(this.state)
+      .then(() => this.props.toggleHide())
+      // .then()
   }
  
   update(field) {
     return e => this.setState({[field]: e.currentTarget.value}); 
   }
+
 
   render() {
     return (

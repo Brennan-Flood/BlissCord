@@ -23,15 +23,11 @@ class Api::ServersController < ApplicationController
 
   def destroy
     @server = Server.find(params[:id])
-    if current_user.id = @server.admin_id
-      if server.destroy!
-        render :index
+      if @server.destroy
+        render :show
       else
-
+        render json: @server.errors.full_messages, status: 401
       end
-    else
-
-    end
   end
 
   def update

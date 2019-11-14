@@ -15,7 +15,7 @@
   background-color: #7289da;
 }
 
-.server-name {
+/* .server-name {
   visibility: hidden;
   display: inline-block;
   text-align: start;
@@ -41,15 +41,16 @@
 }
 .server-icon:hover .server-name-tag {
   visibility: visible;
-}
+} */
 
-.server-icon:hover .server-name {
+/* .server-icon:hover .server-name {
   visibility: visible;
-}
+} */
 
 .server-initials {
   margin: 10px;
   padding-top: 18px;
+  padding-bottom: 15px;
 }
 
 .server-name {
@@ -80,3 +81,7 @@
   background-color: #43b581;
 }
 
+.server-show-link {
+  height: 50px;
+  width: 50px;
+}

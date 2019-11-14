@@ -39,7 +39,6 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <img className="background-image" src="/images/login-background.jpg"></img>
-      <Link className="demo-link" to="/demologin">sign in as demo user</Link>
 
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
@@ -67,6 +66,7 @@ class SessionForm extends React.Component {
             <br/>
             <input className={this.props.formType.toLowerCase() + '-button'} type="submit" value={this.props.formType} />
             <h1 className="session-link">{this.props.navLink}</h1>
+            <Link to="/demologin"><h1 className="demo-link">Login as Demo-User</h1></Link>
 
           </div>
         </form>
