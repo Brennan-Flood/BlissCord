@@ -390,15 +390,22 @@ function (_React$Component) {
   }
 
   _createClass(ChannelIndex, [{
-    key: "componentDidUpdate",
-    value: function componentDidUpdate() {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      // need to change to update and add some verification 
+      // to prevent mass fetchChannels calls
       this.props.fetchChannels(this.props.serverId);
     }
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.channels.map(function (channel) {
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " ", channel.name, " ");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "channel-list"
+      }, this.props.channels.map(function (channel) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "channel-item",
+          key: channel.id
+        }, '#' + channel.name);
       }));
     }
   }]);
@@ -429,8 +436,8 @@ __webpack_require__.r(__webpack_exports__);
 var msp = function msp(state, ownProps) {
   return {
     curentUser: state.entities.users[state.session.id],
-    channels: Object.values(state.entities.channels) // serverId: ownProps.match.params.serverId
-
+    channels: Object.values(state.entities.channels),
+    serverId: ownProps.match.params.serverId
   };
 };
 
@@ -855,7 +862,9 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Find and Join a Server!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.servers.map(function (server) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, server.name);
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: server.id
+        }, server.name);
       })));
     }
   }]);

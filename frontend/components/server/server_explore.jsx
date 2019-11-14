@@ -16,7 +16,7 @@ class ServerExplore extends React.Component {
       <ul>
         {this.props.servers.map((server) => {
           return (
-          <li>{server.name}</li>
+          <li key={server.id}>{server.name}</li>
           )
         })}
       </ul>

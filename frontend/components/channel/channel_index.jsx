@@ -5,16 +5,21 @@ class ChannelIndex extends React.Component {
     super(props)
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
+    // need to change to update and add some verification 
+    // to prevent mass fetchChannels calls
     this.props.fetchChannels(this.props.serverId);
-
   }
 
   render() {
     return (
-      <ul>
+      <ul className="channel-list">
         {this.props.channels.map((channel) => {
-          <li> {channel.name} </li>
+          return <li className="channel-item"
+            key={channel.id}> 
+      
+            {'#' + channel.name} 
+          </li>
         })}
       </ul>
     )
