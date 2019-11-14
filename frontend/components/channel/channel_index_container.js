@@ -5,7 +5,6 @@ import { fetchChannels } from '../../actions/channel_actions';
 const msp = (state, ownProps) => ({
   curentUser: state.entities.users[state.session.id],
   channels: Object.values(state.entities.channels),
-  serverId: ownProps.match.params.serverId
 });
 
 const mdp = (dispatch) => ({

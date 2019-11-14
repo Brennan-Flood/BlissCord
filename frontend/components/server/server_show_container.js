@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import { fetchServer, updateServer, deleteServer } from '../../actions/server_actions';
 import ServerShow from './server_show';
+// import { fetchChannels } from '../../actions/channel_actions';
+
 
 const msp = (state, ownProps) => ({
   server: state.entities.servers[ownProps.match.params.serverId]
@@ -10,7 +12,9 @@ const msp = (state, ownProps) => ({
 const mdp = (dispatch) => ({
   fetchServer: (serverId) => dispatch(fetchServer(serverId)),
   deleteServer: (serverId) => dispatch(deleteServer(serverId)),
-  updateServer: (server) => dispatch(updateServer(server)) 
+  updateServer: (server) => dispatch(updateServer(server)),
+  // fetchChannels: (serverId) => dispatch(fetchChannels(serverId)), 
+
 });
 
 export default connect(msp, mdp)(ServerShow);

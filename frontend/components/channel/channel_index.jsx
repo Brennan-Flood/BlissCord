@@ -3,15 +3,25 @@ import React from 'react';
 class ChannelIndex extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {serverId: null}
   }
 
   componentDidMount() {
-    // need to change to update and add some verification 
-    // to prevent mass fetchChannels calls
     this.props.fetchChannels(this.props.serverId);
+    this.setState({serverId: this.props.serverId});
+  }
+
+  componentDidUpdate() {
+    if (this.props.serverId !== this.state.serverId) {
+    this.setState({serverId: this.props.serverId});
+    this.props.fetchChannels(this.props.serverId);
+    }
   }
 
   render() {
+    if (this.props.serverId != this.state.serverId) {
+      return null;
+    } else {
     return (
       <ul className="channel-list">
         {this.props.channels.map((channel) => {
@@ -23,6 +33,7 @@ class ChannelIndex extends React.Component {
         })}
       </ul>
     )
+  };
   }
 }
 

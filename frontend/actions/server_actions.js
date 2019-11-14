@@ -31,7 +31,7 @@ export const fetchServer = (serverId) => (dispatch) => {
 
 export const createServer = (server) => (dispatch) => {
   return ServerUtil.createServer(server)
-  .then(server => dispatch(receiveServer(server)))
+  .then(server => {dispatch(receiveServer(server))})
 }
 
 export const updateServer = (server) => (dispatch) => {

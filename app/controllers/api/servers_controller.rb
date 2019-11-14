@@ -4,6 +4,8 @@ class Api::ServersController < ApplicationController
   
     @server = Server.new(server_params)
       if @server.save
+        @channel = Channel.new(name: 'general', server_id: @server.id, admin_id: @server.admin_id)
+        @channel.save
         render :show
       else
         render json: @server.errors.full_messages, status: 422
