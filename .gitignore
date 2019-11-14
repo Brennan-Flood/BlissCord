@@ -21,6 +21,8 @@ bundle.js
 
 /node_modules
 
+/bundle.js
+
 /yarn-error.log
 
 bundle.js.map
