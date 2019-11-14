@@ -666,9 +666,16 @@ function (_React$Component) {
   }
 
   _createClass(ServerExplore, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchServers();
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, " poop ");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Find and Join a Server!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.servers.map(function (server) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, server.name);
+      })));
     }
   }]);
 
@@ -866,10 +873,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _server_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./server_index_item */ "./frontend/components/server/server_index_item.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _server_form_server_create_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./server_form/server_create_form_container */ "./frontend/components/server/server_form/server_create_form_container.js");
-/* harmony import */ var _server_form_server_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./server_form/server_form */ "./frontend/components/server/server_form/server_form.jsx");
-/* harmony import */ var _server_show_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./server_show_container */ "./frontend/components/server/server_show_container.js");
-/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../util/route_util */ "./frontend/util/route_util.jsx");
-/* harmony import */ var _server_explore_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./server_explore_container */ "./frontend/components/server/server_explore_container.js");
+/* harmony import */ var _server_show_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./server_show_container */ "./frontend/components/server/server_show_container.js");
+/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../util/route_util */ "./frontend/util/route_util.jsx");
+/* harmony import */ var _server_explore_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./server_explore_container */ "./frontend/components/server/server_explore_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -896,7 +902,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
 var ServerIndex =
 /*#__PURE__*/
 function (_React$Component) {
@@ -911,8 +916,10 @@ function (_React$Component) {
     _this.creatingServer = false;
     _this.toggleHide = _this.toggleHide.bind(_assertThisInitialized(_this));
     _this.state = {
-      hide: true
+      hide: true,
+      searchOn: false
     };
+    _this.toggleSearch = _this.toggleSearch.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -929,10 +936,16 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "toggleSearch",
+    value: function toggleSearch() {
+      this.setState({
+        searchOn: !this.state.searchOn
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      var servers = this.props.servers; // debugger;
-
+      var servers = this.props.servers;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "servers"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -949,18 +962,23 @@ function (_React$Component) {
       }, "+"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/home/explore/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onMouseEnter: this.toggleSearch,
+        onMouseLeave: this.toggleSearch,
         className: "explore-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "images/search.png",
-        alt: ""
+      }, this.state.searchOn || react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "explore-image",
+        src: "images/search-off.png"
+      }), !this.state.searchOn || react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "explore-image",
+        src: "images/search-on.png"
       })))), !this.state.hide && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_server_form_server_create_form_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
         toggleHide: this.toggleHide
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_6__["ProtectedRoute"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
         path: '/home/explore',
-        component: _server_explore_container__WEBPACK_IMPORTED_MODULE_7__["default"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_6__["ProtectedRoute"], {
+        component: _server_explore_container__WEBPACK_IMPORTED_MODULE_6__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
         path: "/home/server/:serverId",
-        component: _server_show_container__WEBPACK_IMPORTED_MODULE_5__["default"]
+        component: _server_show_container__WEBPACK_IMPORTED_MODULE_4__["default"]
       })));
     }
   }]);

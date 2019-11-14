@@ -5,8 +5,23 @@ class ServerExplore extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    this.props.fetchServers();
+  }
+
   render() {
-    return <h1> poop </h1>
+    return (
+      <div>
+        <h1>Find and Join a Server!</h1>
+      <ul>
+        {this.props.servers.map((server) => {
+          return (
+          <li>{server.name}</li>
+          )
+        })}
+      </ul>
+      </div>
+    )
   }
 }
 

@@ -81,6 +81,35 @@
   background-color: #43b581;
 }
 
+.explore-button {
+  display: flex;
+  justify-content: center;
+  color: #43b581;
+  height: 50px;
+  width: 50px;
+  background-color: rgb(72, 69, 73);
+  border-radius: 100%;
+  text-align: center;
+  vertical-align: middle;
+  margin: 5px;
+  font-size: 20px;
+  font-weight: 100;
+  transition: 0.3s;
+  align-content: center;
+}
+
+.explore-image {
+  width: 20px;
+  height: 20px;
+  
+}
+
+.explore-button:hover {
+  color: white;
+  border-radius: 30%;
+  background-color: #43b581;
+}
+
 .server-show-link {
   height: 50px;
   width: 50px;

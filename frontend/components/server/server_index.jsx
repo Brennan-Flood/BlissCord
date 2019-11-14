@@ -2,7 +2,6 @@ import React from 'react';
 import ServerIndexItem from './server_index_item';
 import { Link, Switch } from 'react-router-dom';
 import ServerCreateFormContainer from './server_form/server_create_form_container'
-import ServerForm from './server_form/server_form';
 import ServerShowContainer from './server_show_container';
 import { ProtectedRoute } from '../../util/route_util';
 import ServerExploreContainer from './server_explore_container';
@@ -12,7 +11,8 @@ class ServerIndex extends React.Component {
     super(props);
     this.creatingServer = false;
     this.toggleHide = this.toggleHide.bind(this);
-    this.state = {hide: true};
+    this.state = {hide: true, searchOn: false};
+    this.toggleSearch = this.toggleSearch.bind(this);
   }
 
   componentDidMount() {
@@ -23,11 +23,12 @@ class ServerIndex extends React.Component {
     this.setState({hide: !this.state.hide})
   }
 
-  
+  toggleSearch() {
+    this.setState({searchOn: !this.state.searchOn});
+  }
 
   render() {
     let { servers } = this.props;
-    // debugger;
     return (
     <div className="servers">
         <ul className="server-index-container">
@@ -43,8 +44,22 @@ class ServerIndex extends React.Component {
             +
       </button>
           <Link to="/home/explore/" > 
-            <button className="explore-button"> 
-              <img src="images/search.png" alt=""/> 
+          
+            <button 
+            onMouseEnter={this.toggleSearch} 
+            onMouseLeave={this.toggleSearch} 
+            className="explore-button">
+
+              {this.state.searchOn ||
+                <img className="explore-image"
+                  src="images/search-off.png"
+                />} 
+
+              {!this.state.searchOn || 
+              <img className="explore-image" 
+              src="images/search-on.png" 
+              />} 
+
             </button>
           </Link>
           
@@ -54,8 +69,17 @@ class ServerIndex extends React.Component {
         {!this.state.hide && <ServerCreateFormContainer toggleHide={this.toggleHide}/>}
 
         <Switch>
-        <ProtectedRoute path={'/home/explore'} component={ServerExploreContainer} />
-        <ProtectedRoute path={`/home/server/:serverId`} component={ServerShowContainer} />
+
+        <ProtectedRoute 
+          path={'/home/explore'} 
+          component={ServerExploreContainer} 
+          />
+
+        <ProtectedRoute 
+          path={`/home/server/:serverId`} 
+          component={ServerShowContainer} 
+          />
+
         </Switch> 
     </div>)
   }
