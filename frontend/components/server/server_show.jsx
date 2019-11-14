@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProtectedRoute } from '../../util/route_util';
-
+import ChannelIndexContainer from '../channel/channel_index_container';
 
 class ServerShow extends React.Component {
   constructor(props) {
@@ -46,6 +46,7 @@ class ServerShow extends React.Component {
         </div>
 
         <h1 className="channel-header">Text Channels</h1>
+        <ChannelIndexContainer serverId={this.props.server.id}/>
         { this.state.hide || serverOptions }  
 
       </div>
