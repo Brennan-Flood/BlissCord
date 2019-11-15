@@ -2,6 +2,7 @@ import React from 'react';
 import { ProtectedRoute } from '../../util/route_util';
 import ChannelIndexContainer from '../channel/channel_index_container';
 import EditServerForm from './server_form/server_edit_form_container'
+import ChannelShowContainer from "../channel/channel_show_container";
 
 class ServerShow extends React.Component {
   constructor(props) {
@@ -55,17 +56,21 @@ class ServerShow extends React.Component {
     )
 
     return (
-      <div className="server-show-container">
-        <div className="server-header">
-          <h1 className="server-main-name">{this.props.server.name} </h1>
-          {!this.state.hide || <button onClick={this.toggleHide} className="server-options-dropdown-button">v</button> }
-          {this.state.hide  || <button onClick={this.toggleHide} className="server-options-dropdown-button">x</button> }
-        </div>
+      <div className="server">
+        <div className="server-show-container">
+          <div className="server-header">
+            <h1 className="server-main-name">{this.props.server.name} </h1>
+            {!this.state.hide || <button onClick={this.toggleHide} className="server-options-dropdown-button">v</button> }
+            {this.state.hide  || <button onClick={this.toggleHide} className="server-options-dropdown-button">x</button> }
+          </div>
 
-        <h1 className="channel-header">Text Channels</h1>
-        <ChannelIndexContainer serverId={this.props.server.id}/>
-        { this.state.hide || serverOptions }  
-        {this.state.edit && <EditServerForm toggleEdit={this.toggleEdit} server={this.props.server}/>}
+
+          <ChannelIndexContainer serverId={this.props.server.id}/>
+          { this.state.hide || serverOptions }  
+          {this.state.edit && <EditServerForm toggleEdit={this.toggleEdit} server={this.props.server}/>}
+        </div>
+        <ProtectedRoute path={`/home/server/:serverId/channel/:channelId`} component={ChannelShowContainer} />
+
       </div>
     )
   }

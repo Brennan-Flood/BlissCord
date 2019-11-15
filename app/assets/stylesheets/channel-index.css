@@ -1,0 +1,17 @@
+.channel-index-header {
+  display: flex;
+  justify-content: center;
+  width: 250px;
+}
+
+.channel-title {
+  display: inline-block;
+  width: 100px;
+}
+
+.channel-create-button {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+}
+

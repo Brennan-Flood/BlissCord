@@ -8,7 +8,8 @@ const msp = (state, ownProps) => ({
 });
 
 const mdp = (dispatch) => ({
-  fetchChannels: (serverId) => dispatch(fetchChannels(serverId)), 
+  fetchChannels: (serverId) => dispatch(fetchChannels(serverId)),
+  deleteChannel: (serverId, channelId) => dispatch(deleteChannel(serverId, channelId)), 
 });
 
 export default connect(msp, mdp)(ChannelIndex);
