@@ -30,12 +30,12 @@ class ChannelIndexItem extends React.Component {
     return (
       
         <li className="channel-index-item" key={this.props.channel.id}>
-          <Link to={`/home/server/${this.props.channel.server_id}/channel/${this.props.channel.id}`} >
+          <Link className="channel-link" to={`/home/server/${this.props.channel.server_id}/channel/${this.props.channel.id}`} >
             <h1 className="channel-bullet">#</h1>
-            <h1>{this.props.channel.name}</h1>
+            <h1 className="channel-index-name">{this.props.channel.name}</h1>
           </Link>
 
-            <button onClick={this.handleClick}>Cog</button>
+            <button className="channel-options" onClick={this.handleClick}>Cog</button>
           {this.state.hide || ChannelOptions }
         </li>
      

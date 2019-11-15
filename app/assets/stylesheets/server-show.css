@@ -4,12 +4,12 @@
   max-height: 100%;
   min-height: 700px;
   border-right: 1px solid rgb(53, 53, 53);
-  background-color: rgb(53, 53, 53);
+  background-color: rgb(45, 43, 48);
 }
 
 .server-header {
   display: flex;
-  border-bottom: 1px solid rgb(39, 38, 41);
+  border-bottom: 2px solid rgb(33, 33, 34);
   justify-content: space-between;
 }
 

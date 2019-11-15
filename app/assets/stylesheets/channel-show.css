@@ -1,7 +1,23 @@
 .channel-show {
   width: 80%;
+  background-color: rgb(65, 64, 70);
+}
+
+.channel-show-header {
+  display: flex;
+  width: 100%;
+  border-bottom: 2px solid rgb(33, 33, 34);
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .channel-show-name {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+
+.channel-show-bullet {
   display: inline-block;
 }
