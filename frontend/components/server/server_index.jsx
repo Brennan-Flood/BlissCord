@@ -41,8 +41,14 @@ class ServerIndex extends React.Component {
          />
          )})}
       <button className="create-server-button" onClick={this.toggleHide}>
-            +
+            <h1 className="create-server-button-symbol"> +</h1>
+            <div className="server-index-item-hover">
+              <p className="server-index-item-hover-name arrow_box" >Create a Server</p>
+            </div>
       </button>
+          
+          
+      
           <Link to="/home/explore/" > 
           
             <button 
@@ -59,14 +65,15 @@ class ServerIndex extends React.Component {
               <img className="explore-image" 
               src="images/search-on.png" 
               />} 
-
+              <div className="explore-index-item-hover">
+                <p className="explore-index-item-hover-name arrow_box">Explore Servers</p>
+              </div>
             </button>
           </Link>
           
       
       </ul>
       
-        {!this.state.hide && <ServerCreateFormContainer toggleHide={this.toggleHide}/>}
 
         <Switch>
 
@@ -81,6 +88,8 @@ class ServerIndex extends React.Component {
           />
 
         </Switch> 
+        {!this.state.hide && <ServerCreateFormContainer toggleHide={this.toggleHide} />}
+
     </div>)
   }
 }

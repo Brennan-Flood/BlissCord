@@ -1,12 +1,11 @@
 import React from 'react';
-import ChannelCreateFormContainer from './channel_create_container';
 import ChannelIndexItemContainer from './channel_index_item_container';
 
 
 class ChannelIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {serverId: null, updatePending: false, hide: true};
+    this.state = {serverId: null, updatePending: this.props.updatePending, hide: true};
     this.handleChannelRemoval = this.handleChannelRemoval.bind(this);
     this.toggleHide = this.toggleHide.bind(this);
   }
@@ -40,14 +39,13 @@ class ChannelIndex extends React.Component {
 
   render() {
     if (this.props.serverId != this.state.serverId) {
-      return null;
+      return (<h1>loading...</h1>);
+    } else if (this.state.updatePending === true){
+      return (<h1>loading...</h1>);
     } else {
     return (
       <div className="channel-index">
-        <header className="channel-header">
-          <h1 className="channel-title">Text Channels</h1>
-          <button className="channel-create-button" onClick={this.toggleHide}>+</button>
-        </header>
+        
 
         <ul className="channel-list">
           {this.props.channels.map((channel) => {
@@ -60,10 +58,7 @@ class ChannelIndex extends React.Component {
             /> 
             )})}
         </ul>
-            {this.state.hide || <ChannelCreateFormContainer 
-              serverId={this.props.serverId} 
-              toggleHide={this.toggleHide}
-            /> }
+            
 
       </div>
     )

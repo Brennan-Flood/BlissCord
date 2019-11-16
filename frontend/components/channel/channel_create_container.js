@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { createChannel } from '../../actions/channel_actions';
 import ChannelCreateForm from './channel_create';
 
-const msp = (state) => ({
+const msp = (state, ownProps) => ({
   currentUser: state.entities.users[state.session.id]
 })
 

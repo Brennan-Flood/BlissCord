@@ -22,10 +22,13 @@ class ServerForm extends React.Component {
 
   render() {
     return (
+      <div className="create-server-modal">
+
       <form onSubmit={this.handleSubmit} 
       className="create-server-form" 
       >
         <img className="create-server-background" src="/images/discord-logo.png" />
+        <button className="create-server-cancel" onClick={this.props.toggleHide}>X</button>
         <h1 className="create-server-title">OH, ANOTHER SERVER HUH?</h1>
 
         <input 
@@ -38,6 +41,7 @@ class ServerForm extends React.Component {
 
         <button className="submit-server-button">Create Server</button>
       </form>
+      </div>
     )
   }
 }

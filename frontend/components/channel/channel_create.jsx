@@ -19,19 +19,22 @@ class ChannelCreateForm extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
-      <form className='channel-create-form' onSubmit={this.handleSubmit}>
-        <h1 className="channel-create-title" >ADD A CHANNEL</h1>
-        <input className="channel-input" 
-          type="text" 
-          onChange={this.update('name')} 
-          value={this.state.name}
-          placeholder="CHANNEL NAME"
-        />
-    
+      <div className="channel-create-background">
+        <form className='channel-create-form' onSubmit={this.handleSubmit}>
+          <button onClick={this.props.toggleHide} className="channel-cancel">X</button>
+          <h1 className="channel-create-title" >ADD A CHANNEL</h1>
+          <input className="channel-input" 
+            type="text" 
+            onChange={this.update('name')} 
+            value={this.state.name}
+            placeholder="CHANNEL NAME"
+          />
 
-        <button className="channel-submit" >CREATE YOUR CHANNEL</button>
-      </form>
+          <button className="channel-submit" >CREATE YOUR CHANNEL</button>
+        </form>
+      </div>
     )
   }
 }

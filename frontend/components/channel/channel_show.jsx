@@ -10,7 +10,6 @@ class ChannelShow extends React.Component {
   }
 
   render() {
-    console.log(this.props.channel)
     if (this.props.channel) {
     return (
       <div className="channel-show">

@@ -1,0 +1,89 @@
+.channel-create-form {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  display: block;
+  width: 300px;
+  height: 300px;
+  background-color: rgb(63, 61, 66);
+  left: 20%;
+  top: 20%;
+  border-radius: 5px;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.channel-create-title {
+  display: block;
+  color: #7289da;
+  font-weight: 700;
+  width: 100%;
+  padding-top: 20px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.channel-input {
+  display: block;
+  color: rgb(221, 220, 221);
+  width: 60%;
+  left: 20%;
+  padding-top: 20px;
+  position: relative;
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 0px;
+  border-bottom: 2px solid rgb(72, 69, 73);
+}
+
+.channel-submit {
+  width: 180px;
+  height: 30px;
+  text-align: center;
+  font-family: Helvetica;
+  font-weight: 600;
+  display: block;
+  justify-content: center;
+  position: relative;
+  vertical-align: middle;
+  background: #7289da;
+  border-radius: 3px;
+  padding: 10px;
+  bottom: -30%;
+  left: 55px;
+  transition: 0.3s;
+}
+
+.channel-create-background {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  left: 0;
+  top: 0;
+  background-color: rgb(2, 2, 2, 0.3);
+  z-index: 100;
+}
+
+.channel-cancel {
+  display: inline-block;
+  position: absolute;
+  color: gray;
+  top: 0%;
+  right: 0%;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.channel-cancel:hover {
+  color: white;
+  background-color: rgb(107, 107, 107);
+
+}
+
+.channel-submit:hover {
+  background: #6377c0;
+  bottom: -31%;
+  transition: 0.3;
+}

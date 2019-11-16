@@ -15,37 +15,52 @@
   background-color: #7289da;
 }
 
-/* .server-name {
-  visibility: hidden;
-  display: inline-block;
-  text-align: start;
+.server-index-item-hover {
+  height: 12px;
+  max-width: max-content;
+  min-width: min-content;
   position: relative;
-  top: -33px;
-  left: 65px;
-  vertical-align: middle;
-  background-color: black;
-  padding: 5px;
-  width: 100px;
-  border-radius: 8px;
-}
-
-.server-name-tag {
   visibility: hidden;
-  width: 10px;
-  height: 8px;
-  background-color: black;
-  position: relative;
-  top: -52px;
+  font-size: 12px;
+  z-index: 100;
+  bottom: 50px;
   left: 60px;
-  border-radius: 80px;
+  background-color: black;
+  padding: 6px;
+  border-radius: 5px;
 }
-.server-icon:hover .server-name-tag {
-  visibility: visible;
-} */
 
-/* .server-icon:hover .server-name {
+.server-index-item-hover-name {
+  max-width: max-content;
+  min-width: min-content;
+  background-color: black;
+  white-space: nowrap;
+  max-width: 1000px;
+}
+
+.arrow_box {
+    position: relative;
+    background: #000000;
+}
+
+.arrow_box:after {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    /* height: 0;
+    width: 0; */
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(0, 0, 0, 0);
+    border-right-color: #000000;
+    border-width: 10px;
+    margin-top: -10px;
+}
+
+.server-icon:hover .server-index-item-hover {
   visibility: visible;
-} */
+}
 
 .server-initials {
   margin: 10px;
@@ -68,17 +83,27 @@
   border-radius: 100%;
   text-align: center;
   vertical-align: middle;
+  margin-top: 5px;
   margin: 5px;
   font-size: 40px;
   font-weight: 100;
   transition: 0.3s;
-
 }
 
 .create-server-button:hover {
   color: white;
   border-radius: 30%;
   background-color: #43b581;
+}
+
+.create-server-button:hover .server-index-item-hover {
+  visibility: visible;
+  bottom: 34px;
+}
+
+.create-server-button-symbol {
+  position: relative;
+  top: 3px;
 }
 
 .explore-button {
@@ -98,16 +123,42 @@
   align-content: center;
 }
 
+.explore-index-item-hover {
+  height: 12px;
+  max-width: max-content;
+  min-width: min-content;
+  position: relative;
+  visibility: hidden;
+  font-size: 12px;
+  z-index: 100;
+  bottom: 50px;
+  left: 60px;
+  background-color: black;
+  padding: 6px;
+  border-radius: 5px;
+}
+
 .explore-image {
+  position: relative;
   width: 20px;
   height: 20px;
-  
+  left: 34px;
+  top: 14px;
+  z-index: 1000;
 }
 
 .explore-button:hover {
   color: white;
   border-radius: 30%;
   background-color: #43b581;
+}
+
+.explore-button:hover .explore-index-item-hover {
+  visibility: visible;
+}
+
+.explore-index-item-hover-name {
+
 }
 
 .server-show-link {

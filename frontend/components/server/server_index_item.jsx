@@ -16,18 +16,20 @@ class ServerIndexItem extends React.Component {
       serverInitials = serverInitials.slice(0, 3)
     }
     return (
-      
-      <li id={this.props.server.id} className="server-icon">
-        <Link className="server-show-link" to={`/home/server/${this.props.server.id}`}>
-        <h1 className="server-initials">{serverInitials}</h1>
-        </Link>
-
-        <div className="server-hover">
-          {/* <h1 className="server-name">{this.props.server.name}</h1> */}
-          <h1 className="server-name-tag"></h1>
-          </div>
+      <li className="server-icon" id={this.props.server.id} >
+          <Link className="server-show-link" to={`/home/server/${this.props.server.id}`}>
+            <h1 className="server-initials">{serverInitials}</h1>
+          </Link>
+        
+        
+        <div className="server-index-item-hover">
+          <p className="server-index-item-hover-name arrow_box">{this.props.server.name}</p>
+          <h1></h1>
+        </div>
+        
       </li>
      
+      
     )
   }
 }

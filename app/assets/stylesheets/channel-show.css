@@ -1,4 +1,6 @@
 .channel-show {
+  position: relative;
+  z-index: 0;
   width: 80%;
   background-color: rgb(65, 64, 70);
 }
@@ -17,7 +19,7 @@
   margin-left: 5px;
 }
 
-
 .channel-show-bullet {
+  color: gray;
   display: inline-block;
 }
