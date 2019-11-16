@@ -35,7 +35,7 @@ gem 'annotate'
 
 gem 'bcrypt'
 
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
