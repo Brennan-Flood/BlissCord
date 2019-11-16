@@ -65,9 +65,6 @@ class ServerIndex extends React.Component {
               <img className="explore-image" 
               src="images/search-on.png" 
               />} 
-              <div className="explore-index-item-hover">
-                <p className="explore-index-item-hover-name arrow_box">Explore Servers</p>
-              </div>
             </button>
           </Link>
           

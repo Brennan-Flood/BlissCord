@@ -44,10 +44,8 @@ class ChannelIndex extends React.Component {
       return (<h1>loading...</h1>);
     } else {
     return (
-      <div className="channel-index">
-        
 
-        <ul className="channel-list">
+        <div className="channel-list">
           {this.props.channels.map((channel) => {
             return ( 
             <ChannelIndexItemContainer
@@ -57,10 +55,8 @@ class ChannelIndex extends React.Component {
               deleteChannel={this.props.deleteChannel}
             /> 
             )})}
-        </ul>
-            
+        </div>
 
-      </div>
     )
   };
   }
