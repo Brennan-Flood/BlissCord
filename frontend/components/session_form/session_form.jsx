@@ -52,6 +52,7 @@ class SessionForm extends React.Component {
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-params"
+                maxLength="25"
               />
             </label>
             <br/>
@@ -60,7 +61,7 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 placeholder="Password"
                 onChange={this.update('password')}
-                className="login-params"
+                className="login-params"  
               />
             </label>
             <br/>

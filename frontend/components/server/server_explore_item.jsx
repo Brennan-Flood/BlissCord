@@ -16,7 +16,7 @@ class ServerExploreItem extends React.Component {
     return ( 
     <li className="server-explore-item" key={this.props.server.id} >
     <h1 className="server-explore-name">{this.props.server.name}</h1>
-      <button className="server-explore-join-button" onClick={this.handleClick}>Join</button>
+      <button className="server-explore-join-button" onClick={this.handleClick}>JOIN SERVER</button>
     </li>
     )
   }

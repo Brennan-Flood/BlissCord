@@ -30,6 +30,7 @@ class ChannelCreateForm extends React.Component {
             onChange={this.update('name')} 
             value={this.state.name}
             placeholder="CHANNEL NAME"
+            maxLength="35"
           />
 
           <button className="channel-submit" >CREATE YOUR CHANNEL</button>

@@ -37,6 +37,7 @@ class ServerForm extends React.Component {
           onChange={this.update('name')}
           value={this.state.name}
           placeholder='Enter a Server Name'
+          maxLength="35"
         />
 
         <button className="submit-server-button">Update Server</button>

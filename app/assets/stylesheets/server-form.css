@@ -1,23 +1,26 @@
 .create-server-modal {
   position: absolute;
+  display: flex;
   background-color: rgb(0, 0, 0, 0.3);
   bottom: 0px;
-  width: 1500px;
-  height: 1000px;
+  width: 100vw;
+  height: 100vh;
   z-index: 100;
+  align-items: center;
+  justify-content: center;
 }
 
 .create-server-cancel {
-  display: inline-block;
-  position: absolute;
+  position: relative;
   color: rgb(72, 69, 73);
-  top: 0%;
-  right: 0%;
+  left: 130px;
   padding: 5px;
   margin: 10px;
+  width: 15px;
+  height: 15px;
   transition: 0.3s;
   border-radius: 5px;
-
+  text-align: center;
 }
 
 .create-server-cancel:hover {
@@ -29,73 +32,53 @@
 
 .create-server-form {
   display: flex;
-  position: absolute;
-  justify-content: center;
-  display: block;
+  flex-direction: column;
+  align-items: center;
   width: 300px;
   height: 300px;
   background-color: white;
-  left: 150px;
-  top: 400px;
   border-radius: 5px;
   z-index: 10;
 }
 
+
 .create-server-title {
-  display: block;
   color: #7289da;
   font-weight: 700;
-  width: 100%;
   padding-top: 20px;
   margin-top: 0;
   text-align: center;
 }
 
 .create-server-input {
-  display: block;
   color: #7289da;
-  width: 60%;
-  left: 20%;
   padding-top: 10px;
-  position: relative;
   text-align: center;
-  margin-top: 10px;
   border-bottom: 2px solid #7289da;
-  
+  margin: 20px;
 }
 
-.create-server-input:hover {
-}
+/* .create-server-input:hover {
+} */
 
 .submit-server-button {
-  width: 40%;
-  height: 20px;
+  height: 25px;
+  width: 130px;
+  margin: 30px;
+  padding: 10px;
   text-align: center;
   font-family: Helvetica;
   font-weight: 600;
-  display: block;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
   background: #7289da;
   border-radius: 3px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 5%;
-  padding-right: 5%;
-  bottom: -33%;
-  left: 25%;
   transition: 0.3s;
-
 }
 
 .submit-server-button:hover {
   background: #6377c0;
-  bottom: -31%;
 }
 
 .create-server-background {
-  position: relative;
   opacity: 0.5;
   width: 35px;
   height: 20px;

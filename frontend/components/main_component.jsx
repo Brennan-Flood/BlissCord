@@ -16,13 +16,17 @@ class MainComponent extends React.Component {
   render() {
     return (
       <div className="main-content">
+
       <Route exact path="/" component={SplashContainer} />
+
         <Switch>
           <AuthRoute exact path="/login" component={LogInFormContainer} />
           <AuthRoute exact path="/signup" component={SignUpFormContainer} />
           <AuthRoute exact path="/demologin" component={DemoLoginFormContainer} />
         </Switch>
+
       <ProtectedRoute path="/home" component={ServerIndexContainer} />
+
       </div>
     )
   }

@@ -1,0 +1,65 @@
+.server-explore-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  height: 100px;
+  margin: 10px; 
+  width: 170px;
+  padding: 20px;
+  background-color: #55659c;
+  border-radius: 5px;
+  transition: 0.4s;
+  flex-grow: 1;
+ 
+}
+
+.server-explore-item:hover {
+  top: 1px;
+  flex-grow: 10;
+  background-color: #43b581;
+  transition: 0.4s;
+}
+
+.server-explore-name {
+  font-size: 18px;
+  padding: 2px;
+  font-weight: 900;
+  text-align: center;
+  border-bottom: 2px solid white;
+  transition: 0.4s;
+}
+
+.server-explore-item:hover .server-explore-name {
+  font-size: 22px;
+}
+
+.server-explore-item:hover .server-explore-join-button {
+  opacity: 1;
+  visibility: visible;
+  font-size: 20px;
+  -webkit-transition: 0.4s;
+}
+
+.server-explore-join-button {
+  position: relative;
+  opacity: 0;
+  bottom: 0%;
+  visibility: hidden;
+  font-size: 1px;
+  color: white;
+  margin-top: 25px;
+  background-color: #379168;
+  border-radius: 5px;
+  padding: 8px;
+  font-weight: 900;
+  -webkit-transition: 0.4s;
+}
+
+.server-explore-join-button:hover {
+  top: 1px;
+  color: #43b581;
+  background-color: white;
+  transition: 0.4s;
+}

@@ -3,7 +3,7 @@
   display: block;
   width: 60px;
   border-right: 2px solid rgb(49, 49, 49);
-  height: 745px;
+  height: 100vh;
   z-index: 2;
 }
 

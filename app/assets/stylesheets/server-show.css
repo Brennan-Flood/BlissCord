@@ -5,7 +5,6 @@
   min-height: 700px;
   border-right: 1px solid rgb(53, 53, 53);
   background-color: rgb(45, 43, 48);
-  /* z-index: 1; */
 }
 
 .server-header {
@@ -27,26 +26,29 @@
 
 .server-options-modal {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(0, 0, 0, 0.3);
   left: 0px;
   top: 0px;
-  width: 10000px;
-  height: 1000px;
+  width: 100vw;
+  height: 100vh;
   z-index: 100;
 }
 
 .server-options {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(65, 58, 71);
   padding: 30px;
-  position: relative;
-  left: 150px;
-  top: 200px;
   height: 200px;
   width: 150px;
   border-radius: 5px;
 }
 
 .server-options-header {
+  margin-bottom: 15px;
   border-bottom: 2px solid gray;
   text-align: center;
 }
@@ -64,15 +66,15 @@
 }
 
 .server-options-dropdown-cancel {
-  display: inline-block;
-  position: absolute;
   color: gray;
-  top: 0%;
-  right: 0%;
-  padding: 5px;
   margin: 10px;
   transition: 0.3s;
-
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  position: relative;
+  left: 150px;
+  bottom: 30px;
 }
 
 .server-options-dropdown-cancel:hover {
@@ -102,6 +104,20 @@
 .delete-server-button:hover {
   color: red;
   background-color: rgb(108, 101, 116);
+  border-radius: 5px;
+}
+
+.leave-server-button {
+  color: gray;
+  margin: 5px;
+  padding: 5px;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.leave-server-button:hover {
+  background-color: rgb(108, 101, 116);
+  color: red;
   border-radius: 5px;
 }
 

@@ -10,7 +10,7 @@ class ServerIndexItem extends React.Component {
   render() {
     const serverWords = this.props.server.name.split(' ')
     let serverInitials = serverWords.map((word) => {
-      return word.slice(0, 1)
+      return word.slice(0, 1).toUpperCase()
     })
     if (serverInitials.length > 3) {
       serverInitials = serverInitials.slice(0, 3)

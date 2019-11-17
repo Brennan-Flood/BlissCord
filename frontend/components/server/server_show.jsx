@@ -61,8 +61,9 @@ class ServerShow extends React.Component {
     const serverOptions = (
       <div className="server-options-modal">
         <div className="server-options">
-          <h1 className="server-options-header">{this.props.server.name}</h1>
           <button onClick={this.toggleHide} className="server-options-dropdown-cancel">x</button>
+
+          <h1 className="server-options-header">{this.props.server.name}</h1>
 
           <button className="delete-server-button" onClick={this.handleDelete}>
             Delete Server

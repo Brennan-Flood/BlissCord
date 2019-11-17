@@ -1,8 +1,7 @@
 .channel-create-form {
   display: flex;
-  position: absolute;
-  justify-content: center;
-  display: block;
+  flex-direction: column;
+  align-items: center;
   width: 300px;
   height: 300px;
   background-color: rgb(63, 61, 66);
@@ -13,6 +12,7 @@
 }
 
 .channel-create-title {
+  padding: 20px;
   display: block;
   color: #7289da;
   font-weight: 700;
@@ -23,40 +23,32 @@
 }
 
 .channel-input {
-  display: block;
+  margin: 20px;
   color: rgb(221, 220, 221);
-  width: 60%;
-  left: 20%;
-  padding-top: 20px;
-  position: relative;
   text-align: center;
-  padding-top: 20px;
-  margin-top: 0px;
   border-bottom: 2px solid rgb(72, 69, 73);
 }
 
 .channel-submit {
-  width: 180px;
+  border-radius: 5px;
+  padding: 10px;
+  width: 190px;
   height: 30px;
+  margin: 30px;
   text-align: center;
   font-family: Helvetica;
   font-weight: 600;
-  display: block;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
   background: #7289da;
-  border-radius: 3px;
-  padding: 10px;
-  bottom: -30%;
-  left: 55px;
   transition: 0.3s;
 }
 
 .channel-create-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  width: 10000px;
-  height: 10000px;
+  width: 100vw;
+  height: 100vh;
   left: 0;
   top: 0;
   background-color: rgb(2, 2, 2, 0.3);
@@ -64,11 +56,9 @@
 }
 
 .channel-cancel {
-  display: inline-block;
-  position: absolute;
+  position: relative;
+  left: 130px;
   color: gray;
-  top: 0%;
-  right: 0%;
   padding: 5px;
   margin: 10px;
   border-radius: 5px;
@@ -83,6 +73,5 @@
 
 .channel-submit:hover {
   background: #6377c0;
-  bottom: -31%;
   transition: 0.3;
 }
