@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ServerExploreItemContainer from './server_explore_item_container'
 class ServerExplore extends React.Component {
   constructor(props) {
     super(props)
@@ -11,13 +11,16 @@ class ServerExplore extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Find and Join a Server!</h1>
-      <ul>
+      <div className="server-explore-container">
+        <h1 className="server-explore-header" >Find and Join a Server!</h1>
+      <ul className="server-explore-list" >
         {this.props.servers.map((server) => {
+          if (!this.props.memberedServerIds.includes(server.id)) {
           return (
-          <li key={server.id}>{server.name}</li>
-          )
+            <ServerExploreItemContainer key={server.id} server={server}/>
+          )} else {
+            return null;
+          }
         })}
       </ul>
       </div>

@@ -11,7 +11,7 @@
 }
 
 .channel-link {
-
+  
 }
 
 .channel-options-icon {
@@ -42,6 +42,8 @@
 
 .channel-index-name {
   display: inline-block;
+  max-width: 140px;
+  overflow: hidden;
 }
 
 .channel-options {

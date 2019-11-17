@@ -11,7 +11,8 @@ class ServerForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createServer(this.state)
-      .then(() => this.props.toggleHide());
+      .then(() => this.props.toggleHide())
+      .then(() => this.props.history.push(`/home/server/${this.props.currentUser.server_ids[this.props.currentUser.server_ids.length-1]}`));
       
   }
  
@@ -27,6 +28,7 @@ class ServerForm extends React.Component {
       <form onSubmit={this.handleSubmit} 
       className="create-server-form" 
       >
+
         <img className="create-server-background" src="/images/discord-logo.png" />
         <button className="create-server-cancel" onClick={this.props.toggleHide}>X</button>
         <h1 className="create-server-title">OH, ANOTHER SERVER HUH?</h1>

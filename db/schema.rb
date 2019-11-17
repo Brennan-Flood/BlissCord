@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_14_022157) do
+ActiveRecord::Schema.define(version: 2019_11_16_082609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,25 @@ ActiveRecord::Schema.define(version: 2019_11_14_022157) do
     t.integer "server_id", null: false
     t.integer "admin_id", null: false
     t.index ["server_id"], name: "index_channels_on_server_id"
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.integer "initiator", null: false
+    t.integer "recipient", null: false
+    t.boolean "accepted", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["initiator"], name: "index_friendships_on_initiator"
+    t.index ["recipient"], name: "index_friendships_on_recipient"
+  end
+
+  create_table "server_memberships", force: :cascade do |t|
+    t.integer "member_id", null: false
+    t.integer "server_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_server_memberships_on_member_id"
+    t.index ["server_id"], name: "index_server_memberships_on_server_id"
   end
 
   create_table "servers", force: :cascade do |t|

@@ -4,6 +4,7 @@ import ChannelIndexContainer from '../channel/channel_index_container';
 import EditServerForm from './server_form/server_edit_form_container'
 import ChannelShowContainer from "../channel/channel_show_container";
 import ChannelCreateFormContainer from '../channel/channel_create_container';
+import { logoutCurrentUser } from '../../actions/session_actions';
 
 class ServerShow extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class ServerShow extends React.Component {
     this.toggleHide = this.toggleHide.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
     this.toggleCreate = this.toggleCreate.bind(this);
+    this.handleLeave = this.handleLeave.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -20,6 +22,13 @@ class ServerShow extends React.Component {
     this.props.fetchServer(this.props.match.params.serverId);
     this.setState({hide: true})
     }
+  }
+
+  handleLeave() {
+    let serverMembers = this.props.server.members;
+    let currentMembership = serverMembers[this.props.currentUser.id];
+    this.props.deleteServerMembership(currentMembership.id)
+      .then(() => this.props.history.push('/home'));
   }
 
   handleDelete() {
@@ -43,10 +52,12 @@ class ServerShow extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     if (!this.props.server) {
       return null;
-    };
-    console.log(this.props)
+    } else if (!this.props.server.members || !this.props.server.members[this.props.currentUser.id]) {
+      return null;
+    }
     const serverOptions = (
       <div className="server-options-modal">
         <div className="server-options">
@@ -61,6 +72,9 @@ class ServerShow extends React.Component {
             Edit Server
           </button>
 
+          <button className="leave-server-button" onClick={this.handleLeave}>
+            Leave Server
+          </button>
         </div>
       </div>
     )

@@ -15,7 +15,7 @@ const receiveServer = (server) => ({
 })
 
 const removeServer = (serverId) => ({
-  type:REMOVE_SERVER,
+  type: REMOVE_SERVER,
   serverId
 })
 

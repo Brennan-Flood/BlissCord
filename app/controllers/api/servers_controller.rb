@@ -4,6 +4,8 @@ class Api::ServersController < ApplicationController
   
     @server = Server.new(server_params)
       if @server.save
+        @server_membership = ServerMembership.new(member_id: current_user.id, server_id: @server.id)
+        @server_membership.save
         @channel = Channel.new(name: 'general', server_id: @server.id, admin_id: @server.admin_id)
         @channel.save
         render :show
@@ -16,6 +18,7 @@ class Api::ServersController < ApplicationController
   def show
     @server = Server.find(params[:id])
     @channels = @server.channels
+    @memberships = @server.memberships
     render :show
   end
 

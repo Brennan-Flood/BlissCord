@@ -17,6 +17,25 @@ class User < ApplicationRecord
     foreign_key: :admin_id,
     class_name: 'Channel'
 
+  has_many :server_memberships,
+    primary_key: :id,
+    foreign_key: :member_id,
+    class_name: "ServerMembership"
+
+  has_many :membered_servers,
+    through: :server_memberships,
+    source: :server
+
+  has_many :initiated_friendships,
+    primary_key: :id,
+    foreign_key: :initiator,
+    class_name: 'Friendship'
+
+  has_many :received_friendships,
+    primary_key: :id,
+    foreign_key: :recipient,
+    class_name: 'Freindship'
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user

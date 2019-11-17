@@ -5,7 +5,7 @@ import ChannelIndexItemContainer from './channel_index_item_container';
 class ChannelIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {serverId: null, updatePending: this.props.updatePending, hide: true};
+    this.state = {serverId: null, loading: true, hide: true};
     this.handleChannelRemoval = this.handleChannelRemoval.bind(this);
     this.toggleHide = this.toggleHide.bind(this);
   }
@@ -13,20 +13,16 @@ class ChannelIndex extends React.Component {
   componentDidMount() {
     this.props.fetchChannels(this.props.serverId);
     this.setState({serverId: this.props.serverId});
+    this.setState({loading: false})
   }
 
-  componentDidUpdate() {
-    if (this.props.serverId !== this.state.serverId) {
-
+  componentDidUpdate(prevProps) {
+    if (this.state.serverId !== this.props.serverId) {
       this.setState({serverId: this.props.serverId});
       this.props.fetchChannels(this.props.serverId);
-
-    } else if (this.state.updatePending === true) {
-
-      this.props.fetchChannels(this.props.serverId);
-      this.setState({updatePending: false});
-
+      this.setState({loading: false})
     }
+   
   }
 
   handleChannelRemoval() {
@@ -38,9 +34,8 @@ class ChannelIndex extends React.Component {
   }
 
   render() {
-    if (this.props.serverId != this.state.serverId) {
-      return (<h1>loading...</h1>);
-    } else if (this.state.updatePending === true){
+   
+    if (this.state.loading === true){
       return (<h1>loading...</h1>);
     } else {
     return (

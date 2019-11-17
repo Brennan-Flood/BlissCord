@@ -11,8 +11,14 @@ class ServerIndex extends React.Component {
     super(props);
     this.creatingServer = false;
     this.toggleHide = this.toggleHide.bind(this);
-    this.state = {hide: true, searchOn: false};
+    this.state = {hide: true, searchOn: false, updatePending: false};
     this.toggleSearch = this.toggleSearch.bind(this);
+    this.handleJoin = this.handleJoin.bind(this);
+  }
+
+  handleJoin() {
+    this.setState({updatePending: true});
+    this.setState({updatePending: false});
   }
 
   componentDidMount() {
@@ -29,17 +35,24 @@ class ServerIndex extends React.Component {
 
   render() {
     let { servers } = this.props;
+    // if ( !servers ) {
+    //   return <h1>loading...</h1>
+    // }
+    
     return (
     <div className="servers">
         <ul className="server-index-container">
       {servers.map((server) => {
-        return (
+        if (this.props.memberedServerIds.includes(server.id)) {
+          return (
         <ServerIndexItem
-         key={server.id}
-         className="server-icon" 
-         server={server} 
+          key={server.id}
+          className="server-icon" 
+          server={server} 
          />
-         )})}
+        )} else {
+          return null
+        }})}
       <button className="create-server-button" onClick={this.toggleHide}>
             <h1 className="create-server-button-symbol"> +</h1>
             <div className="server-index-item-hover">

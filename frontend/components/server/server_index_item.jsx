@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class ServerIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {hidden: true}
+    this.state = {hidden: true, loading: false}
   }
 
   render() {

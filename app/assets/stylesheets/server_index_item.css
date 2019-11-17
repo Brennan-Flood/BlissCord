@@ -32,6 +32,7 @@
 }
 
 .server-index-item-hover-name {
+  color: white;
   max-width: max-content;
   min-width: min-content;
   background-color: black;
