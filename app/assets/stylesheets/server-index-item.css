@@ -108,6 +108,11 @@
   top: 3px;
 }
 
+.server-index-nav-end {
+  border-bottom: 2px solid rgb(92, 90, 94);
+  margin-top: 4px;
+}
+
 .explore-button {
   display: flex;
   justify-content: center;

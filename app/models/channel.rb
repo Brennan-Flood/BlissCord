@@ -13,4 +13,10 @@ class Channel < ApplicationRecord
     foreign_key: :server_id,
     class_name: 'Server'
 
+  has_many :messages,
+    dependent: :destroy,
+    primary_key: :id,
+    foreign_key: :channel_id,
+    class_name: 'ChannelMessage'
+
 end

@@ -42,6 +42,34 @@ class ServerIndex extends React.Component {
     return (
     <div className="servers">
         <ul className="server-index-container">
+
+          <Link to="/home/explore/" >
+
+            <button
+              onMouseEnter={this.toggleSearch}
+              onMouseLeave={this.toggleSearch}
+              className="explore-button">
+
+              {this.state.searchOn ||
+                <img className="explore-image"
+                  src="images/search-off.png"
+                />}
+
+              {!this.state.searchOn ||
+                <img className="explore-image"
+                  src="images/search-on.png"
+                />}
+            </button>
+          </Link>
+
+          <button className="create-server-button" onClick={this.toggleHide}>
+            <h1 className="create-server-button-symbol"> +</h1>
+            <div className="server-index-item-hover">
+              <p className="server-index-item-hover-name arrow_box" >Create a Server</p>
+            </div>
+          </button>
+
+              <h1 className="server-index-nav-end"></h1>
       {servers.map((server) => {
         if (this.props.memberedServerIds.includes(server.id)) {
           return (
@@ -53,33 +81,7 @@ class ServerIndex extends React.Component {
         )} else {
           return null
         }})}
-      <button className="create-server-button" onClick={this.toggleHide}>
-            <h1 className="create-server-button-symbol"> +</h1>
-            <div className="server-index-item-hover">
-              <p className="server-index-item-hover-name arrow_box" >Create a Server</p>
-            </div>
-      </button>
-          
-          
       
-          <Link to="/home/explore/" > 
-          
-            <button 
-            onMouseEnter={this.toggleSearch} 
-            onMouseLeave={this.toggleSearch} 
-            className="explore-button">
-
-              {this.state.searchOn ||
-                <img className="explore-image"
-                  src="images/search-off.png"
-                />} 
-
-              {!this.state.searchOn || 
-              <img className="explore-image" 
-              src="images/search-on.png" 
-              />} 
-            </button>
-          </Link>
           
       
       </ul>

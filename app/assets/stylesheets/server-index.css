@@ -1,10 +1,11 @@
 .server-index-container {
   top: 0px;
   display: block;
-  width: 60px;
+  width: 65px;
+  background-color: rgb(36, 35, 39);
   border-right: 2px solid rgb(49, 49, 49);
-  height: 100vh;
-  z-index: 2;
+  height: 95vh;
+  z-index: 4;
 }
 
 .main-content {
@@ -14,6 +15,7 @@
 .servers {
   width: 100%;
   display: flex;
+
 }
 
 .server {

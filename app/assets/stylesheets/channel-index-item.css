@@ -11,7 +11,7 @@
 }
 
 .channel-link {
-  
+
 }
 
 .channel-options-icon {
@@ -47,23 +47,23 @@
 }
 
 .channel-options {
-  position: absolute;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;  
   width: 200px;
   height: 200px;
   background-color: rgb(65, 58, 71);
-  left: 150px;
-  top: 200px;
   border-radius: 5px;
   z-index: 100;
   transition: 0.3s;
 }
 
 .channel-options-modal {
-  /* position: absolute; */
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   width: 100vw;
-  display: block;
   background-color: rgb(19, 18, 18, 0.3);
   z-index: 99;
   position: fixed;
@@ -73,7 +73,6 @@
 
 .channel-options-header {
   background: none;
-  display: block;
   position: relative;
   text-align: center;
   color: white;
@@ -87,12 +86,15 @@
 }
 
 .channel-options-cancel {
+  position: relative;
   color: gray;
-  position: absolute;
-  right: 0;
-  top: 0;
+  text-align: center;
+  vertical-align: middle;
+  left: 175px;
+  top: 5px;
+  width: 10px;
+  height: 15px;
   padding: 5px;
-  margin: 10px;
   z-index: 100;
   border-radius: 5px;
   transition: 0.3s;
