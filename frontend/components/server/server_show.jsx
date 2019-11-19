@@ -52,7 +52,6 @@ class ServerShow extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     if (!this.props.server) {
       return null;
     } else if (!this.props.server.members || !this.props.server.members[this.props.currentUser.id]) {

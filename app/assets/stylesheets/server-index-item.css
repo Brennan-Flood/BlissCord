@@ -10,6 +10,19 @@
   z-index: 3;
 }
 
+.viewing-server-icon {
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  vertical-align: middle;
+  margin: 5px;
+  transition: 0.3s;
+  z-index: 3;
+  color: white;
+  border-radius: 17px;
+  background-color: #7289da;
+}
+
 .server-icon:hover {
   color: white;
   border-radius: 17px;
@@ -24,11 +37,12 @@
   visibility: hidden;
   font-size: 12px;
   z-index: 4;
-  bottom: 50px;
+  bottom: 57px;
   left: 60px;
   background-color: black;
   padding: 6px;
   border-radius: 5px;
+  transition-delay: 0s;
 }
 
 .server-index-item-hover-name {
@@ -62,9 +76,45 @@
 
 .server-icon:hover .server-index-item-hover {
   visibility: visible;
+  transition-delay: 0.2s;
+}
+
+.server-index-item-hover-whitespace {
+  visibility: hidden;
+  position: relative;
+  width: 0px;
+  height: 20px;
+  background-color: white;
+  bottom: 19px;
+  right: 100px;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.viewing-server-index-item-hover-whitespace {
+  position: relative;
+  width: 30px;
+  height: 40px;
+  background-color: white;
+  bottom: 28px;
+  right: 100px;
+  transition: 0.3s;
+  border-radius: 5px;
+  visibility: visible;
+}
+
+.server-icon:hover .server-index-item-hover-whitespace {
+  visibility: visible;
+  width: 30px;
+}
+
+.explore-button:hover .server-index-item-hover-whitespace {
+
 }
 
 .server-initials {
+  position: relative;
+  bottom: 10px;
   margin: 10px;
   padding-top: 18px;
   padding-bottom: 15px;
@@ -103,12 +153,17 @@
   bottom: 34px;
 }
 
+
+
 .create-server-button-symbol {
   position: relative;
   top: 3px;
 }
 
 .server-index-nav-end {
+  position: relative;
+  bottom: 2px;
+  width: 100%;
   border-bottom: 2px solid rgb(92, 90, 94);
   margin-top: 4px;
 }
@@ -154,3 +209,4 @@
   height: 50px;
   width: 50px;
 }
+

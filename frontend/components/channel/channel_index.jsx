@@ -8,20 +8,32 @@ class ChannelIndex extends React.Component {
     this.state = {serverId: null, loading: true, hide: true};
     this.handleChannelRemoval = this.handleChannelRemoval.bind(this);
     this.toggleHide = this.toggleHide.bind(this);
+    this.getCurrentServer = this.getCurrentServer.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchChannels(this.props.serverId);
-    this.setState({serverId: this.props.serverId});
-    this.setState({loading: false})
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.state.serverId !== this.props.serverId) {
-      this.setState({serverId: this.props.serverId});
-      this.props.fetchChannels(this.props.serverId);
-      this.setState({loading: false})
+  // componentDidMount() {
+  //   this.props.fetchChannels(this.props.serverId);
+  //   this.setState({serverId: this.props.serverId});
+  //   this.setState({loading: false})
+  // }
+  getCurrentServer() {
+    let url = window.location.href.split('server').slice(1);
+    if (url[0]) {
+      let integer = parseInt(url[0].split('/').slice(1)[0]);
+      return integer;
+    } else {
+      return -1;
     }
+  }
+
+  componentDidUpdate() {
+    console.log(this.props.serverId)
+    if (this.state.serverId !== this.getCurrentServer()) {
+      this.setState({ loading: true, serverId: this.getCurrentServer()})
+      this.props.fetchChannels(this.props.serverId);
+      this.setState({ loading: false })
+    }
+    
    
   }
 

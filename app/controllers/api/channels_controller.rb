@@ -11,7 +11,7 @@ class Api::ChannelsController < ApplicationController
 
   def show
     @channel = Channel.find(params[:id])
-    
+    @messages = @channel.messages
     render :show
   end
 

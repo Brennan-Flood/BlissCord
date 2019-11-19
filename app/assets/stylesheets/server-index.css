@@ -1,7 +1,9 @@
 .server-index-container {
   top: 0px;
-  display: block;
-  width: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
   background-color: rgb(36, 35, 39);
   border-right: 2px solid rgb(49, 49, 49);
   height: 95vh;
