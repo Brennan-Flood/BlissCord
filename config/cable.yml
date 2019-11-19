@@ -6,5 +6,4 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: DiscordClone_production
+  url: redis://redistogo:a907644c835df9ea7e596ed909a370b7@crestfish.redistogo.com:10505/"
