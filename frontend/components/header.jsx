@@ -16,7 +16,7 @@ class Header extends React.Component {
       
         {!this.props.currentUser || 
         <Link to="/" onClick={this.props.logout}>
-          <img className="logout-image" src="/images/logout.png" alt=""/>
+          <img className="logout-image" src="/images/logout-image.png" alt=""/>
         </Link>
         }
         

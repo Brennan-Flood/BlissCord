@@ -10,9 +10,6 @@
   z-index: 5;
 }
 
-.channel-link {
-
-}
 
 .channel-options-icon {
   visibility: hidden;
@@ -79,10 +76,6 @@
   padding: 20px;
   font-weight: 700;
   margin-bottom: 10px;
-}
-
-.channel-options-header:hover {
-
 }
 
 .channel-options-cancel {
