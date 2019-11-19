@@ -37,8 +37,6 @@ class ChannelShow extends React.Component {
 
   sendMessage(e) {
     e.preventDefault();
-    // this.props.createChannelMessage(this.state)
-    
     this.state.currentChannel.speak({body: this.state.body, channel_id: this.state.channel_id, author_id: this.state.author_id});
     this.setState({body: ""})
   }

@@ -34,17 +34,18 @@
 }
 
 .message-index {
-  position: relative;
   flex: 1 2 500px;
+  overflow: auto;
   display: flex;
-  flex-direction: column;
-  overflow: scroll;
+  flex-flow: column nowrap;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 15px;
 }
 
-
+.message-index > :first-child {
+    margin-top: auto !important;
+}
 
 .message-header {
   display: flex;
