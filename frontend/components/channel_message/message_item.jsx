@@ -20,7 +20,7 @@ class Message extends React.Component {
     const header = () => {
       return (
       <header className="message-header">
-        <h1 className="message-author"> {this.props.message.author.username} </h1>
+        <h1 className="message-author"> {this.props.username.username} </h1>
         <h1 className="message-timestamp">{this.parseDate(this.props.message.created_at)}</h1>
       </header>
       )

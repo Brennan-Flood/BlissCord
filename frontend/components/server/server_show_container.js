@@ -5,7 +5,7 @@ import { deleteServerMembership } from '../../actions/server_membership_actions'
 
 const msp = (state, ownProps) => ({
   server: state.entities.servers[ownProps.match.params.serverId],
-  currentUser: state.entities.users[state.session.id]
+  currentUser: state.entities.users[state.session.id],
 });
 
 const mdp = (dispatch) => ({

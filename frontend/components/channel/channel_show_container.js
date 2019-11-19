@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ChannelShow from './channel_show';
 import { fetchChannel } from '../../actions/channel_actions';
-import { createChannelMessage, deleteChannelMessage, fetchChannelMessages } from '../../actions/channel_message_actions';
+import { createChannelMessage, deleteChannelMessage, fetchChannelMessages, receiveMessage } from '../../actions/channel_message_actions';
 
 const msp = (state, ownProps) => ({
   serverId: ownProps.match.params.serverId,
@@ -16,7 +16,8 @@ const mdp = (dispatch) => ({
   fetchChannel: (serverId, channelId) => dispatch(fetchChannel(serverId, channelId)),
   fetchChannelMessages: (channelId) => dispatch(fetchChannelMessages(channelId)),
   createChannelMessage: (message) => dispatch(createChannelMessage(message)),
-  deleteChannelMessage: (messageId) => dispatch(deleteChannelMessage(messageId))
+  deleteChannelMessage: (messageId) => dispatch(deleteChannelMessage(messageId)),
+  receiveMessage: (message) => dispatch(receiveMessage(message))
 })
 
 export default connect(msp, mdp)(ChannelShow)

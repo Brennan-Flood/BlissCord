@@ -12,16 +12,32 @@ class ChannelShow extends React.Component {
   }
 
   componentDidMount() {
+    let receiveMessage = this.props.receiveMessage.bind(this);
     this.props.fetchChannel(this.props.serverId, this.props.channelId);
     this.props.fetchChannelMessages(this.props.channelId);
+    App.cable.subscriptions.create(
+      { channel: "ChannelChannel", currentchannelId: this.props.channelId },
+        {
+          received: data => {
+            receiveMessage(data);
+          },
+          speak: function (data) {
+
+            return this.perform("speak", data);
+          }
+        }
+    );
   }
 
   update(e) {
     this.setState({body: e.target.value})
   }
 
-  sendMessage() {
-    this.props.createChannelMessage(this.state)
+  sendMessage(e) {
+    e.preventDefault();
+    // this.props.createChannelMessage(this.state)
+    let subscription = this.findSub(App.cable.subscriptions.subscriptions);
+    subscription.speak({body: this.state.body, channel_id: this.state.channel_id, author_id: this.state.author_id});
     this.setState({body: ""})
   }
 
@@ -30,7 +46,6 @@ class ChannelShow extends React.Component {
     let prevId;
     let createdAt;
     let prevCreatedAt;
-    let authorName;
     if (this.props.channel) {
     return (
       <div className="channel-show">
@@ -51,7 +66,7 @@ class ChannelShow extends React.Component {
               createdAt = message.created_at;
               prevId = message.author_id;
               
-              return ( <Message prevCreatedAt={prevCreatedAt} displayHeader={displayHeader} key={message.id} message={message} /> )
+              return ( <Message username={this.props.members[message.author_id].username} prevCreatedAt={prevCreatedAt} displayHeader={displayHeader} key={message.id} message={message} /> )
             }
           })}
 

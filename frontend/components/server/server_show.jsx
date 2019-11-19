@@ -78,7 +78,7 @@ class ServerShow extends React.Component {
         </div>
       </div>
     )
-
+     
 
     return (
       <div className="server">
@@ -92,10 +92,10 @@ class ServerShow extends React.Component {
             <button className="channel-create-button" onClick={this.toggleCreate}>+</button>
           </footer>
 
-          <ChannelIndexContainer serverId={this.props.server.id} updatePending={true} />
+          <ChannelIndexContainer  serverId={this.props.server.id} updatePending={true} />
           
         </div>
-        <ProtectedRoute path={`/home/server/:serverId/channel/:channelId`} component={ChannelShowContainer} />
+        <ProtectedRoute members={this.props.server.members} path={`/home/server/:serverId/channel/:channelId`} component={ChannelShowContainer} />
         
         {this.state.hide || serverOptions}
         {this.state.edit && <EditServerForm toggleEdit={this.toggleEdit} server={this.props.server} />}
