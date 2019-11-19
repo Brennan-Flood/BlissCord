@@ -1,5 +1,6 @@
 import React from 'react';
 import Message from '../channel_message/message_item';
+
 class ChannelShow extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +16,7 @@ class ChannelShow extends React.Component {
     let receiveMessage = this.props.receiveMessage.bind(this);
     this.props.fetchChannel(this.props.serverId, this.props.channelId);
     this.props.fetchChannelMessages(this.props.channelId);
-    App.cable.subscriptions.create(
+    let currentChannel = App.cable.subscriptions.create(
       { channel: "ChannelChannel", currentchannelId: this.props.channelId },
         {
           received: data => {
@@ -27,6 +28,7 @@ class ChannelShow extends React.Component {
           }
         }
     );
+    this.setState({currentChannel: currentChannel})
   }
 
   update(e) {
@@ -36,8 +38,8 @@ class ChannelShow extends React.Component {
   sendMessage(e) {
     e.preventDefault();
     // this.props.createChannelMessage(this.state)
-    let subscription = this.findSub(App.cable.subscriptions.subscriptions);
-    subscription.speak({body: this.state.body, channel_id: this.state.channel_id, author_id: this.state.author_id});
+    
+    this.state.currentChannel.speak({body: this.state.body, channel_id: this.state.channel_id, author_id: this.state.author_id});
     this.setState({body: ""})
   }
 
