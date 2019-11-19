@@ -21,8 +21,9 @@ class ChannelIndexItem extends React.Component {
   }
 
   handleDelete() {
-    this.props.deleteChannel(this.props.serverId, this.props.channel.id)
-    .then(() => this.props.handleRemoval())
+    this.toggleHide();
+    this.props.deleteChannel(this.props.serverId, this.props.channel.id);
+    this.props.handleRemoval();
   }
 
   render() {

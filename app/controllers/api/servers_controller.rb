@@ -18,7 +18,7 @@ class Api::ServersController < ApplicationController
   def show
     @server = Server.find(params[:id])
     @channels = @server.channels
-    @memberships = @server.memberships
+    #@memberships = @server.memberships
     render :show
   end
 

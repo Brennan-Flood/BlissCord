@@ -1,13 +1,14 @@
 class Api::ChannelMessagesController < ApplicationController
+
   def index
-    @messages = Channel.find(message_params[:channel_id]).messages
+    @messages = Channel.find(params[:channel_id]).messages
     render "api/channel_messages/index"
   end
 
   def create
     @message = ChannelMessage.new(message_params)
     if @message.save
-      render :json => @message
+      render :show
     else
       render json: @message.errors.full_messages, status: 422
     end

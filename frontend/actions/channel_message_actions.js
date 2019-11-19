@@ -1,4 +1,4 @@
-import * as ChannelMessageApiUtil from "../util/message_api_util";
+import * as ChannelMessageApiUtil from "../util/channel_message_util";
 
 export const RECEIVE_ALL_CHANNEL_MESSAGES = "RECEIVE_ALL_MESSAGES";
 export const RECEIVE_CHANNEL_MESSAGE = "RECEIVE_MESSAGE";
@@ -25,14 +25,14 @@ const removeMessage = (message) => {
   }
 };
 
-export const fetchMessages = (channelId) => dispatch => {
-  return ChannelMessageApiUtil.fetchMessages(channelId)
+export const fetchChannelMessages = (channelId) => dispatch => {
+  return ChannelMessageApiUtil.fetchChannelMessages(channelId)
     .then(messages => { dispatch(receiveMessages(messages))
     });
 }
 
 export const createChannelMessage = (message) => dispatch => {
-  return ChannelMessageApiUtil.createMessage(message)
+  return ChannelMessageApiUtil.createChannelMessage(message)
     .then(message => dispatch(receiveMessage(message)));
 }
 

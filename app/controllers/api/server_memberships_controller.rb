@@ -1,4 +1,5 @@
 class Api::ServerMembershipsController < ApplicationController
+
   def create
     server_id = membership_params[:server_id].to_i
     member_id = membership_params[:member_id].to_i

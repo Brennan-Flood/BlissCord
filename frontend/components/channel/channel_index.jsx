@@ -5,17 +5,18 @@ import ChannelIndexItemContainer from './channel_index_item_container';
 class ChannelIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {serverId: null, loading: true, hide: true};
+    this.state = {serverId: this.props.serverId, loading: true, hide: true, updatePending: false};
     this.handleChannelRemoval = this.handleChannelRemoval.bind(this);
     this.toggleHide = this.toggleHide.bind(this);
     this.getCurrentServer = this.getCurrentServer.bind(this);
+    this.fetchChannels = this.fetchChannels.bind(this);
+  
   }
 
-  // componentDidMount() {
-  //   this.props.fetchChannels(this.props.serverId);
-  //   this.setState({serverId: this.props.serverId});
-  //   this.setState({loading: false})
-  // }
+  fetchChannels() {
+    this.props.fetchChannels(this.getCurrentServer())
+  }
+
   getCurrentServer() {
     let url = window.location.href.split('server').slice(1);
     if (url[0]) {
@@ -26,19 +27,26 @@ class ChannelIndex extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.setState({loading: true})
+    this.fetchChannels();
+    this.setState({loading: false});
+  }
+
   componentDidUpdate() {
-    console.log(this.props.serverId)
-    if (this.state.serverId !== this.getCurrentServer()) {
-      this.setState({ loading: true, serverId: this.getCurrentServer()})
-      this.props.fetchChannels(this.props.serverId);
-      this.setState({ loading: false })
-    }
     
-   
+    if (this.state.serverId !== this.getCurrentServer()) {
+      this.props.fetchChannels(this.getCurrentServer());
+      this.setState({serverId: this.getCurrentServer()})
+    } else if (this.state.updatePending) {
+      this.props.fetchChannels(this.getCurrentServer());
+      this.setState({updatePending: false})
+    }
   }
 
   handleChannelRemoval() {
     this.setState({updatePending: true})
+    this.componentDidUpdate();
   }
 
   toggleHide() {
@@ -46,9 +54,11 @@ class ChannelIndex extends React.Component {
   }
 
   render() {
-   
-    if (this.state.loading === true){
-      return (<h1>loading...</h1>);
+    if (!this.props.channels[0] && this.state.serverId === this.getCurrentServer()) {
+      return (<h1 className="no-channels-message">No Channels Here {':('} </h1>)
+    }
+    if (this.props.channels[0] && (this.props.channels[0].server_id !== this.getCurrentServer() || this.updatePending)){
+      return (<h1 className="loading">loading...</h1>);
     } else {
     return (
 

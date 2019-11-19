@@ -1,4 +1,6 @@
 .channel-show {
+  display: flex;
+  flex-direction: column;
   position: relative;
   z-index: 0;
   width: 80%;

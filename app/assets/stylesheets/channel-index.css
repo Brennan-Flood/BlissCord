@@ -3,6 +3,11 @@
   justify-content: center;
   width: 250px;
 }
+.loading {
+  padding: 20px;
+  text-align: center;
+  color: gray;
+}
 
 .channel-title {
   display: inline-block;
@@ -15,4 +20,8 @@
   font-weight: 700;
 }
 
-
+.no-channels-message {
+  color: gray;
+  text-align: center;
+  padding: 20px
+}
