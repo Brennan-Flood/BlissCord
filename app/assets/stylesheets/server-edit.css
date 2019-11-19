@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   bottom: 0px;
   width: 100vw;
   height: 100vh;
