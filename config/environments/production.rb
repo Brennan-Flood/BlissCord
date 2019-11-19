@@ -1,5 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.action_cable.allowed_request_origins = ["https://discord-clone-1.herokuapp.com/"]
 
   # Code is not reloaded between requests.
   config.cache_classes = true
