@@ -32,6 +32,12 @@ class ChannelShow extends React.Component {
         }
     );
     this.setState({currentChannel: currentChannel})
+    this.updateScroll();
+  }
+
+  componentWillUnmount() {
+    let index = document.getElementById('message-index');
+    index.removeEventListener('scroll', this.handleScroll);
   }
 
   getCurrentChannel() {
@@ -64,17 +70,27 @@ class ChannelShow extends React.Component {
         }
       );
       this.setState({currentChannel: currentChannel});
+
     }
+    this.updateScroll();
+
   }
 
   update(e) {
     this.setState({body: e.target.value})
   }
 
+  updateScroll(){
+    let index = document.getElementById("message-index");
+    if (index) {
+    index.scrollTop = index.scrollHeight;
+    }
+  }
+
   sendMessage(e) {
     e.preventDefault();
     this.state.currentChannel.speak({body: this.state.body, channel_id: this.state.channel_id, author_id: this.state.author_id});
-    this.setState({body: ""})
+    this.setState({body: ""});
   }
 
   render() {
@@ -92,7 +108,7 @@ class ChannelShow extends React.Component {
         <h2 className="channel-show-name">{this.props.channel.name}</h2>
         </header>
 
-        <div className="message-index">
+        <div id="message-index" className="message-index">
           {this.props.channelMessages.map((message) => {
             if (message) {
               if(prevId === message.author_id ) {
