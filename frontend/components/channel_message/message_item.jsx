@@ -11,8 +11,14 @@ class Message extends React.Component {
     let day = messageDate.getDate();
     let year = messageDate.getFullYear();
     let month = messageDate.getMonth();
+    let hours = messageDate.getHours();
+    let minutes = messageDate.getMinutes();
+    let minutesZero;
 
-    return `${month}/${day}/${year}`
+    ( minutes < 10 ? minutesZero = "0" : minutesZero = "")
+    let half;
+    ( hours > 12 ? half = 'PM' : half = 'AM' );
+    return `${month}/${day}/${year} at ${hours % 12}:${minutes}${minutesZero} ${half}`
 
   }
 

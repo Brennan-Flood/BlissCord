@@ -5,14 +5,27 @@ import { Link } from 'react-router-dom';
 class ChannelIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {hide: true, deleted: false, updatePending: true};
+    this.state = {hide: true, deleted: false, updatePending: true, viewing: false};
     this.toggleHide = this.toggleHide.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
 
+  getCurrentChannel() {
+    let url = window.location.href.split('channel').slice(1);
+    if (url[0]) {
+      let integer = parseInt(url[0].split('/').slice(1)[0]);
+      return integer;
+    } else {
+      return -1;
+    }
+  }
+
   componentDidUpdate() {
-    if (this.state.updatePending) {
-      this.setState({updatePending: false})
+    console.log(this.getCurrentChannel())
+    if (this.props.channel.id === this.getCurrentChannel() && this.state.viewing === false) {
+      this.setState({ viewing: true });
+    } else if (this.props.channel.id !== this.getCurrentChannel() && this.state.viewing === true) {
+      this.setState({ viewing: false })
     }
   }
 
@@ -38,10 +51,10 @@ class ChannelIndexItem extends React.Component {
     )
     return (
       
-        <li className="channel-index-item" key={this.props.channel.id}>
+        <li className={ this.state.viewing ? "viewing-channel-index-item" : "channel-index-item"} key={this.props.channel.id}>
           <Link className="channel-link" to={`/home/server/${this.props.channel.server_id}/channel/${this.props.channel.id}`} >
             <h1 className="channel-bullet">#</h1>
-            <h1 className="channel-index-name">{this.props.channel.name}</h1>
+            <h1 className="channel-index-name">{this.props.channel.name.length > 20 ? this.props.channel.name.slice(0, 20) + '...' : this.props.channel.name}</h1>
           </Link>
 
             <button className="channel-options-cog" onClick={this.toggleHide}>

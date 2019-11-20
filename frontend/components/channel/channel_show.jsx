@@ -129,7 +129,7 @@ class ChannelShow extends React.Component {
         
         <footer className="message-footer">
           <form className="message-form" onSubmit={this.sendMessage}>
-            <input placeholder={`Message ${this.props.channel.name}`}
+            <input placeholder={`Message #${this.props.channel.name}`}
               className="message-input"
               type="text"
               onChange={this.update}

@@ -7,23 +7,25 @@
 }
 
 .message-input::placeholder {
-  color: gray;
+  color: rgb(114, 114, 114);
 }
 
 .message-form {
+  font-weight: 100;
+  font-size: 14px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-content: center;
-  background-color: rgb(84, 78, 94);
-  height: 60%;
+  background-color: rgb(65, 68, 77);
+  height: 53%;
   width: 80%;
   margin: 10px;
 }
 
 .message-footer {
   display: flex;
-  border-top: 2px solid rgb(73, 73, 73);
+  border-top: 1px solid rgb(73, 73, 73);
   justify-content: center;
   align-items: center;
   height: 80px;
@@ -50,23 +52,27 @@
 .message-header {
   display: flex;
   align-items: center;
-  border-top: 2px solid rgb(73, 73, 73);
+  border-top: 1px solid rgb(73, 73, 73);
   margin-top: 15px;
 }
 
 .message-author {
-  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
   padding: 10px;
   margin-left: 0px;
+  font-weight: 300;
 }
 
 .message-timestamp {
-  color: rgb(95, 94, 94);
+  color: rgb(97, 96, 96);
   font-size: 10px;
   padding: 5px;
 }
 
 .message-body {
+  font-size: 14px;
+  font-weight: 200;
   color: rgb(190, 190, 190);
   padding-left: 20px;
   padding-right: 10px;

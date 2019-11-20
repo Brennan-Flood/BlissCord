@@ -8,17 +8,18 @@
   margin: 10px; 
   width: 170px;
   padding: 20px;
-  background-color: #55659c;
+  background-color: rgb(32, 33, 35);
   border-radius: 5px;
   transition: 0.4s;
-  flex-grow: 1;
  
 }
 
 .server-explore-item:hover {
-  top: 1px;
-  flex-grow: 10;
-  background-color: #43b581;
+  -webkit-box-shadow: 1 2px 2px 0px black;
+	-moz-box-shadow: 1 2px 2px 0px black;
+	box-shadow: 1 2px 2px 0px black;
+  bottom: 1px;
+  background-color: rgb(26, 27, 29);
   transition: 0.4s;
 }
 

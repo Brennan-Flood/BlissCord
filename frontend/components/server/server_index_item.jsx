@@ -5,7 +5,7 @@ class ServerIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {hidden: true, loading: false, viewing: false};
-    this.getCurrentServer.bind(this)
+    // this.getCurrentServer.bind(this)
   }
 
   componentDidUpdate() {

@@ -2,14 +2,39 @@
   display: flex;
   padding: 0px;
   color: gray;
+  align-items: center;
   justify-content: space-between;
-  vertical-align: middle;
   margin: 5px;
   transition: 0.3s;
   border-radius: 5px;
   z-index: 5;
 }
 
+.viewing-channel-index-item {
+  display: flex;
+  padding: 0px;
+  color: white;
+  background-color:  rgba(90, 90, 90, 0.6);
+
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px;
+  transition: 0.3s;
+  border-radius: 5px;
+  z-index: 5;
+}
+
+.viewing-channel-index-item .channel-options-icon {
+  visibility: visible;
+  width: 15px;
+  height: 15px;
+  padding: 10px;
+}
+
+.channel-link {
+  display: flex;
+  flex-direction: row;
+}
 
 .channel-options-icon {
   visibility: hidden;
@@ -24,21 +49,29 @@
 }
 
 .channel-index-item:hover {
-  background-color:  rgb(90, 90, 90);
-  color: white;
+  background-color:  rgba(73, 73, 73, 0.6);
+  color: rgb(226, 226, 226);
   border-radius: 5px;
 }
 
 .channel-bullet {
+  color: gray;
+  text-align: center;
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-style: italic;
-  padding: 5px;
+  transform: scale(1.2, 1);
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  font-weight: 100;
 }
 
 .channel-index-name {
-  display: inline-block;
+  font-size: 14px;
+  padding: 5px;
+  text-align: center;
   max-width: 140px;
   overflow: hidden;
 }

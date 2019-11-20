@@ -84,7 +84,7 @@ class ServerShow extends React.Component {
       <div className="server">
         <div className="server-show-container">
           <div className="server-header">
-            <h1 className="server-main-name">{this.props.server.name} </h1>
+            <h1 className="server-main-name">{this.props.server.name.length > 20 ? this.props.server.name.slice(0,20) + '...' : this.props.server.name} </h1>
             {!this.state.hide || <button onClick={this.toggleHide} className="server-options-dropdown-button">v</button> }
           </div>
           <footer className="channel-header">

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 610px;
+  background-color: rgb(54, 57, 66);
 }
 
 .server-explore-header {
@@ -12,12 +12,13 @@
 }
 
 .server-explore-list {
+  height: 100%;
   width: 90%;
   display: flex;
   flex-wrap: wrap;
   overflow-y: scroll;
   overflow-x: scroll;
-  flex-direction: column;
+  flex-direction: row;
   /* justify-content: flex-start; */
   padding: 20px;
   /* align-items: flex-start; */

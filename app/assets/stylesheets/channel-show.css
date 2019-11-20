@@ -4,16 +4,18 @@
   position: relative;
   z-index: 0;
   width: 80%;
-  background-color: rgb(55, 53, 61);
+  background-color:rgb(54, 57, 66);
 }
 
 .channel-show-header {
   display: flex;
   width: 100%;
-  border-bottom: 2px solid rgb(33, 33, 34);
   padding: 10px;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 100;
+  -webkit-box-shadow: 0 1px 0px 0px rgb(39, 39, 39);
+	-moz-box-shadow: 0 1px 0px 0px rgb(39, 39, 39);
+	box-shadow: 0 1px 0px 0px rgb(39, 39, 39);
 }
 
 .channel-show-name {
