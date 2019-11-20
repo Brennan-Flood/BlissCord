@@ -35,10 +35,7 @@ class ChannelShow extends React.Component {
     this.updateScroll();
   }
 
-  componentWillUnmount() {
-    let index = document.getElementById('message-index');
-    index.removeEventListener('scroll', this.handleScroll);
-  }
+  
 
   getCurrentChannel() {
     let url = window.location.href.split('channel').slice(1);
