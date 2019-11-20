@@ -58,7 +58,7 @@ class ChannelIndex extends React.Component {
       return (<h1 className="no-channels-message">No Channels Here {':('} </h1>)
     }
     if (this.props.channels[0] && (this.props.channels[0].server_id !== this.getCurrentServer() || this.updatePending)){
-      return (<h1 className="loading">loading...</h1>);
+      return (<h1 className="loading"></h1>);
     } else {
     return (
 

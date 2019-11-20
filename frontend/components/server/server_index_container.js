@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { fetchServers } from '../../actions/server_actions';
 import { logout } from '../../actions/session_actions';
 import ServerIndex from './server_index'
+import { fetchUsers } from '../../actions/user_actions';
 
 
 const msp = (state) => ({
@@ -11,6 +12,7 @@ const msp = (state) => ({
 })
 
 const mdp = (dispatch) => ({
+  fetchUsers: () => dispatch(fetchUsers()),
   fetchServers: () => dispatch(fetchServers()),
   logout: () => dispatch(logout())
 })

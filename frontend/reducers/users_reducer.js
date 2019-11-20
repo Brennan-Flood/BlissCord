@@ -1,7 +1,7 @@
 import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_SERVER_MEMBERSHIP, REMOVE_SERVER_MEMBERSHIP } from '../actions/server_membership_actions';
 import { RECEIVE_SERVER } from '../actions/server_actions';
-
+import { RECEIVE_USER, RECEIVE_ALL_USERS } from '../actions/user_actions';
 
 const usersReducer = (state = {}, action) => {
   let userId;
@@ -39,6 +39,11 @@ const usersReducer = (state = {}, action) => {
       } else {
         return nextState;
       }
+    case RECEIVE_USER:
+      nextState = Object.assign({}, state, {[action.user.id]: action.user});
+      return nextState;
+    case RECEIVE_ALL_USERS:
+      return action.users;
     case LOGOUT_CURRENT_USER: 
       nextState = Object.assign({}, state);
       return nextState;

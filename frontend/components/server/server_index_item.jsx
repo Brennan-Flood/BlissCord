@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 class ServerIndexItem extends React.Component {
   constructor(props) {
     super(props);

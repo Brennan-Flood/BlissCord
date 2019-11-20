@@ -1,3 +1,11 @@
+export const fetchServerMemberships = (serverId) => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/server_memberships',
+    data: {server_id: serverId}
+  })
+}
+
 export const createServerMembership = (server_membership) => {
   return $.ajax({
     method: 'POST',

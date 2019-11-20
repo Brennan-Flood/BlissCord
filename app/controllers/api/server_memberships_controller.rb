@@ -1,5 +1,12 @@
 class Api::ServerMembershipsController < ApplicationController
 
+  def index
+    @server = Server.find(membership_params[:server_id])
+    @members = @server.members
+
+    render :index
+  end
+
   def create
     server_id = membership_params[:server_id].to_i
     member_id = membership_params[:member_id].to_i

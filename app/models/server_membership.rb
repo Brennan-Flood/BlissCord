@@ -12,9 +12,10 @@ class ServerMembership < ApplicationRecord
     foreign_key: :server_id,
     class_name: "Server"
   
-  def self.find_by_credentials(user_id, server_id)
-    @server_membership = ServerMembership.find_by(member_id: user_id, server_id: server_id)
-    return nil unless @server_membership
-    @server_membership
-  end
+  
+  # def self.find_by_credentials(user_id, server_id)
+  #   @server_membership = ServerMembership.find_by(member_id: user_id, server_id: server_id)
+  #   return nil unless @server_membership
+  #   @server_membership
+  # end
 end

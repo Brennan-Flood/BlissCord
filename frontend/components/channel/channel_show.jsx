@@ -6,18 +6,21 @@ class ChannelShow extends React.Component {
     super(props);
     this.state = {body: "", 
       author_id: this.props.currentUser.id, 
-      channel_id: this.props.channelId
+      channel_id: this.props.channelId,
     };
+
+    
     this.sendMessage = this.sendMessage.bind(this);
     this.update = this.update.bind(this);
+    this.getCurrentChannel = this.getCurrentChannel.bind(this);
   }
 
   componentDidMount() {
     let receiveMessage = this.props.receiveMessage.bind(this);
-    this.props.fetchChannel(this.props.serverId, this.props.channelId);
-    this.props.fetchChannelMessages(this.props.channelId);
+    this.props.fetchChannel(this.props.serverId, this.getCurrentChannel());
+    this.props.fetchChannelMessages(this.getCurrentChannel());
     let currentChannel = App.cable.subscriptions.create(
-      { channel: "ChannelChannel", currentchannelId: this.props.channelId },
+      { channel: "ChannelChannel", currentchannelId: this.getCurrentChannel()},
         {
           received: data => {
             receiveMessage(data);
@@ -29,6 +32,39 @@ class ChannelShow extends React.Component {
         }
     );
     this.setState({currentChannel: currentChannel})
+  }
+
+  getCurrentChannel() {
+    let url = window.location.href.split('channel').slice(1);
+    if (url[0]) {
+      let integer = parseInt(url[0].split('/').slice(1)[0]);
+      return integer;
+    } else {
+      return -1;
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.state.channel_id !== this.getCurrentChannel()) {
+      let receiveMessage = this.props.receiveMessage.bind(this);
+      this.setState({channel_id: this.getCurrentChannel()})
+      this.props.fetchChannel(this.props.serverId, this.state.channel_id);
+      this.props.fetchChannelMessages(this.getCurrentChannel());
+      
+      let currentChannel = App.cable.subscriptions.create(
+        { channel: "ChannelChannel", currentchannelId: this.getCurrentChannel() },
+        {
+          received: data => {
+            receiveMessage(data);
+          },
+          speak: function (data) {
+
+            return this.perform("speak", data);
+          }
+        }
+      );
+      this.setState({currentChannel: currentChannel});
+    }
   }
 
   update(e) {
@@ -46,6 +82,8 @@ class ChannelShow extends React.Component {
     let prevId;
     let createdAt;
     let prevCreatedAt;
+    let username;
+
     if (this.props.channel) {
     return (
       <div className="channel-show">
@@ -65,8 +103,8 @@ class ChannelShow extends React.Component {
               prevCreatedAt = createdAt;
               createdAt = message.created_at;
               prevId = message.author_id;
-              
-              return ( <Message username={this.props.members[message.author_id].username} prevCreatedAt={prevCreatedAt} displayHeader={displayHeader} key={message.id} message={message} /> )
+              username = {username: this.props.users[message.author_id].username}
+              return ( <Message username={username} prevCreatedAt={prevCreatedAt} displayHeader={displayHeader} key={message.id} message={message} /> )
             }
           })}
 
