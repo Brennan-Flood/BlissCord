@@ -4,11 +4,11 @@
   align-items: center;
   flex-direction: column;
   margin-top: 20px;
-  height: 100px;
+  height: 200px;
   margin: 10px; 
-  width: 170px;
+  width: 190px;
   padding: 20px;
-  background-color: rgb(32, 33, 35);
+  background: linear-gradient(180deg, rgba(32, 33, 35, 0), rgba(32,33,35,1));
   border-radius: 5px;
   transition: 0.4s;
  
@@ -19,48 +19,95 @@
 	-moz-box-shadow: 1 2px 2px 0px black;
 	box-shadow: 1 2px 2px 0px black;
   bottom: 1px;
-  background-color: rgb(26, 27, 29);
+  background: linear-gradient(180deg, rgba(26, 27, 29, 0), rgba(26, 27, 29, 1));
   transition: 0.4s;
 }
 
 .server-explore-name {
-  font-size: 18px;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  position: relative;
+  top: 20px;
+  font-size: 16px;
   padding: 2px;
   font-weight: 900;
-  text-align: center;
-  border-bottom: 2px solid white;
   transition: 0.4s;
 }
 
 .server-explore-item:hover .server-explore-name {
-  font-size: 22px;
+  font-size: 16px;
 }
 
 .server-explore-item:hover .server-explore-join-button {
   opacity: 1;
   visibility: visible;
-  font-size: 20px;
-  -webkit-transition: 0.4s;
+  font-size: 10px;
+  -webkit-transition: 0.1s;
 }
 
 .server-explore-join-button {
   position: relative;
-  opacity: 0;
-  bottom: 0%;
   visibility: hidden;
-  font-size: 1px;
+  font-size: 10px;
   color: white;
   margin-top: 25px;
-  background-color: #379168;
+  background-color: #7289da;
   border-radius: 5px;
   padding: 8px;
   font-weight: 900;
-  -webkit-transition: 0.4s;
+  -webkit-transition: 0.1s;
 }
 
 .server-explore-join-button:hover {
   top: 1px;
-  color: #43b581;
-  background-color: white;
-  transition: 0.4s;
+  background-color: #667bc4;
+  transition: 0.1s;
+}
+
+.server-explore-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  margin: 5px;
+  transition: 0.3s;
+  z-index: 3;
+  color: white;
+  border-radius: 17px;
+  background-color: rgb(54, 57, 62);
+
+}
+
+.server-explore-item:hover .server-explore-icon {
+  background-color: #7289da;
+
+}
+
+.server-explore-initials {
+  position: relative;
+  top: 2px;
+}
+
+.server-explore-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.server-explore-member-info {
+  font-size: 12px;
+  bottom: 4%;
+  display: flex;
+  position: absolute;
+  justify-content: flex-end;
+  width: 95%;
+}
+
+.total-member-count {
+  text-align: center;
+  justify-self: flex-end;
 }

@@ -23,7 +23,9 @@ class ChannelShow extends React.Component {
       { channel: "ChannelChannel", currentchannelId: this.getCurrentChannel()},
         {
           received: data => {
+            if (data.channel_id === this.state.channel_id) {
             receiveMessage(data);
+            }
           },
           speak: function (data) {
 
@@ -58,7 +60,9 @@ class ChannelShow extends React.Component {
         { channel: "ChannelChannel", currentchannelId: this.getCurrentChannel() },
         {
           received: data => {
+            if (data.channel_id === this.state.channel_id) {
             receiveMessage(data);
+            }
           },
           speak: function (data) {
 

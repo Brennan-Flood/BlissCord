@@ -12,4 +12,5 @@ class Friendship < ApplicationRecord
     foreign_key: :recipient,
     class_name: 'User'
 
+  
 end

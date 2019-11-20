@@ -21,7 +21,6 @@ class ChannelIndexItem extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log(this.getCurrentChannel())
     if (this.props.channel.id === this.getCurrentChannel() && this.state.viewing === false) {
       this.setState({ viewing: true });
     } else if (this.props.channel.id !== this.getCurrentChannel() && this.state.viewing === true) {

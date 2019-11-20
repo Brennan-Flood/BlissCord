@@ -1,0 +1,49 @@
+.freinds {
+  width: 100%;
+  display: flex;
+}
+
+.friends-index-container {
+  display: inline-block;
+  width: 250px;
+  height: 100%;
+  border-right: 1px solid rgb(53, 53, 53);
+  background-color: rgb(48, 49, 54);
+}
+
+.friends-index-container-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 38px;
+  z-index: -5;
+  -webkit-box-shadow: 0 1px 0px 0px rgb(39, 39, 39);
+	-moz-box-shadow: 0 1px 0px 0px rgb(39, 39, 39);
+	box-shadow: 0 1px 0px 0px rgb(39, 39, 39);
+}
+
+.friendships-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 10px;
+  max-width: 160px;
+  overflow: hidden;
+}
+
+.friendship-index-nav {
+
+}
+
+.all-friends-link {
+
+}
+
+.friend-requests-link {
+
+}
+
+.find-friends-link {
+  
+}

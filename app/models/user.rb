@@ -31,15 +31,15 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: 'ChannelMessage'
 
- # has_many :initiated_friendships,
- #   primary_key: :id,
- #   foreign_key: :initiator,
- #   class_name: 'Friendship'
- #
- # has_many :received_friendships,
- #   primary_key: :id,
- #   foreign_key: :recipient,
- #   class_name: 'Freindship'
+ has_many :initiated_friendships,
+   primary_key: :id,
+   foreign_key: :initiator,
+   class_name: 'Friendship'
+ 
+ has_many :received_friendships,
+   primary_key: :id,
+   foreign_key: :recipient,
+   class_name: 'Freindship'
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

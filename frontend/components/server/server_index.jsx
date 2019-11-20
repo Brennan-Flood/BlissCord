@@ -5,15 +5,17 @@ import ServerCreateFormContainer from './server_form/server_create_form_containe
 import ServerShowContainer from './server_show_container';
 import { ProtectedRoute } from '../../util/route_util';
 import ServerExploreContainer from './server_explore_container';
+import FriendsIndexContainer from '../friends/friends_index_container';
 
 class ServerIndex extends React.Component {
   constructor(props) {
     super(props);
     this.creatingServer = false;
     this.toggleHide = this.toggleHide.bind(this);
-    this.state = {hide: true, searchOn: false, updatePending: false};
+    this.state = {hide: true, searchOn: false, updatePending: false, friendsOn: false};
     this.toggleSearch = this.toggleSearch.bind(this);
     this.handleJoin = this.handleJoin.bind(this);
+    this.toggleFriends = this.toggleFriends.bind(this);
   }
 
   handleJoin() {
@@ -24,7 +26,6 @@ class ServerIndex extends React.Component {
   componentDidMount() {
     this.props.fetchServers();
     this.props.fetchUsers();
-
   }
 
   toggleHide() {
@@ -33,6 +34,10 @@ class ServerIndex extends React.Component {
 
   toggleSearch() {
     this.setState({searchOn: !this.state.searchOn});
+  }
+
+  toggleFriends() {
+    this.setState({friendsOn: !this.state.friendsOn});
   }
 
   render() {
@@ -44,6 +49,25 @@ class ServerIndex extends React.Component {
     return (
     <div className="servers">
         <ul className="server-index-container">
+          <Link to="/home/friends/">
+            <button 
+              onMouseEnter={this.toggleFriends}
+              onMouseLeave={this.toggleFriends}
+              className="friends-button"
+            >
+
+              {this.state.friendsOn ||
+                <img className="friends-image"
+                  src="images/friends-off.png"
+                />}
+
+              {!this.state.friendsOn ||
+                <img className="friends-image"
+                  src="images/friends-on.png"
+                />}
+
+            </button>
+          </Link>
 
           <Link to="/home/explore/" >
 
@@ -100,6 +124,11 @@ class ServerIndex extends React.Component {
           path={`/home/server/:serverId`} 
           component={ServerShowContainer} 
           />
+
+        <ProtectedRoute
+          path={`/home/friends`}
+          component={FriendsIndexContainer}
+        />
 
         </Switch> 
         {!this.state.hide && <ServerCreateFormContainer toggleHide={this.toggleHide} />}

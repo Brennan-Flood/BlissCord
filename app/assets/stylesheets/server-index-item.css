@@ -149,8 +149,6 @@
   bottom: 34px;
 }
 
-
-
 .create-server-button-symbol {
   position: relative;
   top: 3px;
@@ -206,3 +204,25 @@
   width: 50px;
 }
 
+.friends-button {
+  border-radius: 100%;
+  margin: 5px;
+  z-index: 10;
+  height: 50px;
+  width: 50px;
+  background-color: rgb(54, 57, 62);
+  display: flex;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.friends-button:hover {
+  background-color: #43b581;
+  border-radius: 30%;
+
+}
+
+.friends-image {
+  width: 30px;
+  height: 30px;
+}
