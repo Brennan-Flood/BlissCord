@@ -11,7 +11,7 @@ class Api::FriendshipsController < ApplicationController
   end
 
   def create
-    @friendship = friendship.new(friendship_params)
+    @friendship = Friendship.new(friendship_params)
     if @friendship.save
       render :show
     else
@@ -20,10 +20,10 @@ class Api::FriendshipsController < ApplicationController
   end
 
   def destroy
-    @friendship = friendship.find_by(initiator: friendship_params[:initiator, recipient: friendship_params[:recipient]])
+    @friendship = friendship.find(params[:id])
     if @friendship.destroy
-      
-    else
+      render :show
+    else  
       render json: @friendship.errors.full_messages, status: 422
     end
   end

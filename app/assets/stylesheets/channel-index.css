@@ -10,14 +10,24 @@
 }
 
 .channel-title {
+  color: gray;
   display: inline-block;
   width: 100px;
 }
 
+.channel-index-header:hover .channel-title {
+  color: white;
+}
+
 .channel-create-button {
+  color: gray;
   display: inline-block;
   font-size: 16px;
   font-weight: 700;
+}
+
+.channel-create-button:hover {
+  color: white;
 }
 
 .no-channels-message {

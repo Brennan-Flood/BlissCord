@@ -1,6 +1,9 @@
-.freinds {
+.friends-show {
   width: 100%;
+}
+.friends {
   display: flex;
+  width: 100%;
 }
 
 .friends-index-container {
@@ -23,27 +26,69 @@
 	box-shadow: 0 1px 0px 0px rgb(39, 39, 39);
 }
 
-.friendships-title {
+.friendship-searchbar {
   font-family: 'Open Sans', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
+  color: white;
+  font-weight: 200;
+  font-size: 12px;
   margin: 10px;
-  max-width: 160px;
+  padding: 4px;
+  width: 80%;
+  border-radius: 5px;
   overflow: hidden;
+  background-color: rgb(33, 34, 38);
+
+}
+
+.friendship-searchbar::placeholder {
+  color: gray;
 }
 
 .friendship-index-nav {
-
+  font-size: 14px;
+  font-weight: 200px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
 .all-friends-link {
-
+  color: gray;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .friend-requests-link {
-
+  color: gray;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .find-friends-link {
-  
+  color: gray;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.all-friends-link:hover {
+  color: white;
+  padding: 10px;
+  background-color:  rgba(73, 73, 73, 0.6);
+
+}
+
+.friend-requests-link:hover {
+  color: white;
+  padding: 10px;
+  background-color:  rgba(73, 73, 73, 0.6);
+}
+
+.find-friends-link:hover {
+  color: white;
+  padding: 10px;
+  background-color:  rgba(73, 73, 73, 0.6);
+}
+
+.friends-show {
+  display: inline-block;
+  /* width: 100%; */
 }

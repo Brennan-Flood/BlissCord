@@ -1,0 +1,30 @@
+.dm-index-container {
+  display: flex;
+  justify-content: center;
+}
+
+.dm-index-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding-top: 10px;
+}
+
+.dm-title {
+  color: gray;
+  font-size: 12px;
+}
+
+.dm-title:hover {
+  color: white;
+}
+
+.create-group-dm-button {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.dm-index {
+
+}

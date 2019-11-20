@@ -1,14 +1,19 @@
-.channel-show {
+.friends-all-container {
   display: flex;
-  flex-direction: column;
-  position: relative;
   z-index: 0;
   width: 100%;
   background-color:rgb(54, 57, 66);
 }
 
-.channel-show-header {
+.friends-all-image {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.friends-all-header {
   display: flex;
+  height: 18px;
   width: 100%;
   padding: 10px;
   font-size: 13px;
@@ -16,14 +21,9 @@
   -webkit-box-shadow: 0 1px 0px 0px rgb(39, 39, 39);
 	-moz-box-shadow: 0 1px 0px 0px rgb(39, 39, 39);
 	box-shadow: 0 1px 0px 0px rgb(39, 39, 39);
+  flex-direction: row;
 }
 
-.channel-show-name {
-  display: inline-block;
-  margin-left: 5px;
-}
+.friends-all-title {
 
-.channel-show-bullet {
-  color: gray;
-  display: inline-block;
 }
