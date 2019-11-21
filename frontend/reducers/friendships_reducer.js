@@ -11,7 +11,7 @@ const FriendshipsReducer = (state = {}, action) => {
       return nextState;
     case REMOVE_FRIENDSHIP:
       nextState = Object.assign({}, state);
-      delete nextState[action.friendship.id]
+      delete nextState[action.friendship.id];
       return nextState;
     default:
       return state;
