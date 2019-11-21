@@ -2,12 +2,18 @@ import React from 'react';
 import { ProtectedRoute } from '../../util/route_util';
 import FriendsAllContainer from './friends_all_container';
 import FriendsDiscoverContainer from './friends_discover_container';
-import FriendRequestsContainer from './friends_requests';
+import FriendRequestsContainer from './friends_requests_container';
 import { Switch, Link } from 'react-router-dom';
 
 class FriendIndex extends React.Component {
   constructor(props) {
     super(props)
+  }
+
+  componentDidMount() {
+    this.props.fetchUsers()
+    .then(() => this.props.fetchFriendships())
+
   }
 
   render() {
@@ -37,9 +43,9 @@ class FriendIndex extends React.Component {
           {/* <div className="friends-show"> */}
           <Switch>
 
-            <ProtectedRoute path="/home/friends/all" component={FriendsAllContainer}/>
+            <ProtectedRoute path="/home/friends/all" component={FriendsAllContainer} users={this.props.users} friendship={this.props.friendships}/>
 
-          <ProtectedRoute path="/home/friends/requests" component={FriendRequestsContainer}/>
+          <ProtectedRoute path="/home/friends/requests" component={FriendRequestsContainer} users={this.props.users} friendships={this.props.friendships}/>
 
           <ProtectedRoute path="/home/friends/discover" component={FriendsDiscoverContainer}/>
 

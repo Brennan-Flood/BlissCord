@@ -39,7 +39,7 @@ class User < ApplicationRecord
  has_many :received_friendships,
    primary_key: :id,
    foreign_key: :recipient,
-   class_name: 'Freindship'
+   class_name: 'Friendship'
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

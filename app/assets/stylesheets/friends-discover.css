@@ -1,3 +1,30 @@
-.friends-discover-container {
-  
+.user-discovery {
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: scroll;
+}
+
+.user-discover-item {
+  margin-left: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  width: 80%;
+  border-bottom: 1px solid rgb(63, 66, 77);
+}
+
+.user-discover-item:hover {
+  border-radius: 10px;
+  background-color: rgb(63, 66, 77);
+}
+
+.user-discover-name {
+  font-weight: 500;
+}
+
+.user-discover-button {
+  color: #43b581;
+  font-size: 12px;
 }

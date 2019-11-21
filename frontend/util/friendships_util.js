@@ -12,6 +12,13 @@ export const createFriendship = (friendship) => {
   })
 }
 
+export const acceptFriendship = (friendshipId) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/friendships/${friendshipId}`
+  })
+}
+
 export const deleteFriendship = (friendshipId) => {
   return $.ajax({
     method: 'DELETE',

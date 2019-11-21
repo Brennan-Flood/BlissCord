@@ -10,7 +10,7 @@ const receiveFriendships = (friendships) => ({
   friendships
 })
 
-const receiveFriendship = (friendship) => ({
+export const receiveFriendship = (friendship) => ({
   type: RECEIVE_FRIENDSHIP,
   friendship
 })
@@ -27,6 +27,11 @@ export const fetchFriendships = () => dispatch => {
 
 export const createFriendship = (friendship) => (dispatch) => {
   return FriendshipUtil.createFriendship(friendship)
+  .then((friendship) => dispatch(receiveFriendship(friendship)))
+}
+
+export const acceptFriendship = (friendshipId) => (dispatch) => {
+  return FriendshipUtil.acceptFriendship(friendshipId)
   .then((friendship) => dispatch(receiveFriendship(friendship)))
 }
 

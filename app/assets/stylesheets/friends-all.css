@@ -1,5 +1,6 @@
 .friends-all-container {
   display: flex;
+  flex-direction: column;
   z-index: 0;
   width: 100%;
   background-color:rgb(54, 57, 66);
@@ -26,4 +27,35 @@
 
 .friends-all-title {
 
+}
+
+.friends-list-item {
+  margin-left: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  width: 80%;
+  border-bottom: 1px solid rgb(63, 66, 77);
+}
+
+.friends-list-item:hover {
+  border-radius: 10px;
+  background-color: rgb(63, 66, 77);
+}
+
+.friends-list-name {
+  font-weight: 500;
+}
+
+.remove-friend-button {
+  color: red;
+  font-size: 12px;
+}
+
+.friends-list {
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: scroll;
 }

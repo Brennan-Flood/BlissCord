@@ -1,2 +1,51 @@
+.friend-requests {
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: scroll;
+}
+
+.friend-request > :first-child {
+  margin-top: 10px
+}
+
+.friend-request-item {
+  margin-left: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  width: 80%;
+  border-bottom: 1px solid rgb(63, 66, 77);
+
+}
+
+.friend-request-item:hover {
+  border-radius: 10px;
+  background-color: rgb(63, 66, 77);
+}
+
+.request-options {
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.friend-request-name {
+  font-weight: 500;
+}
+
+.accept-request-button {
+  color: #43b581;
+  font-size: 12px;
+}
+
+.decline-request-button {
+  color: red;
+  font-size: 12px;
+}
+
+
+
 
 

@@ -1,1 +1,1 @@
-json.extract! friendship, :id, :initiator, :recipient
+json.extract! friendship, :id, :initiator, :recipient, :accepted
