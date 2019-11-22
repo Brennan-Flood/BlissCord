@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_22_011333) do
+ActiveRecord::Schema.define(version: 2019_11_22_164429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,12 @@ ActiveRecord::Schema.define(version: 2019_11_22_011333) do
     t.datetime "updated_at", null: false
     t.index ["initiator"], name: "index_friendships_on_initiator"
     t.index ["recipient"], name: "index_friendships_on_recipient"
+  end
+
+  create_table "profile_icons", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "image_url"
+    t.index ["user_id"], name: "index_profile_icons_on_user_id"
   end
 
   create_table "server_memberships", force: :cascade do |t|

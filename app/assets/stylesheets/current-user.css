@@ -1,0 +1,29 @@
+.current-user-bar {
+  display: flex;
+  position: relative;
+  top: 76%;
+  flex-direction: row;
+  align-items: center;
+  z-index: 100;
+  width: 100%;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  background-color: rgb(42, 43, 47);
+}
+
+.current-user-name {
+  margin-left: 10px;
+}
+
+.current-user-image {
+margin-left: 10px;
+width: 40px;
+height: 40px;
+border-radius: 100%;
+overflow: hidden;
+}
+
+.friends-index-container > .current-user-bar {
+
+}

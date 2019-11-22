@@ -1,9 +1,11 @@
 import React from 'react';
-
+import CurrentUserContainer from './profile_icon/current_user_container';
 class Footer extends React.Component {
   render() {
-    // return (<footer className="main-footer"><h1 className="my-email">flood.brennan@gmail.com</h1></footer>)
-    return ( <h1></h1>)
+    return ( 
+    // <CurrentUserContainer />
+    <div></div>
+    )
   }
 }
 

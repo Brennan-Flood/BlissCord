@@ -1,0 +1,1 @@
+json.extract! profile_icon, :id, :image_url, :user_id

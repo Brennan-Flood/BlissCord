@@ -2,6 +2,7 @@ import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from '../actions/session_ac
 import { RECEIVE_SERVER_MEMBERSHIP, REMOVE_SERVER_MEMBERSHIP } from '../actions/server_membership_actions';
 import { RECEIVE_SERVER } from '../actions/server_actions';
 import { RECEIVE_USER, RECEIVE_ALL_USERS } from '../actions/user_actions';
+import { RECEIVE_PROFILE } from '../actions/profile_actions';
 
 const usersReducer = (state = {}, action) => {
   let userId;
@@ -10,6 +11,11 @@ const usersReducer = (state = {}, action) => {
   let newIds;
   Object.freeze(state);
   switch(action.type) {
+    case RECEIVE_PROFILE:
+      nextState = Object.assign({}, state);
+      nextState[action.profile.id].image_url = action.profile.image_url;
+      nextState[action.profile.id].profile_id.id = action.profile.id;
+      return nextState;
     case RECEIVE_CURRENT_USER:
       return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
     case RECEIVE_SERVER_MEMBERSHIP:

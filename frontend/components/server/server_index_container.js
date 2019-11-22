@@ -3,6 +3,7 @@ import { fetchServers } from '../../actions/server_actions';
 import { logout } from '../../actions/session_actions';
 import ServerIndex from './server_index'
 import { fetchUsers } from '../../actions/user_actions';
+import { withRouter } from 'react-router-dom';
 
 const msp = (state) => ({
   curentUser: state.entities.users[state.session.id],
@@ -16,4 +17,4 @@ const mdp = (dispatch) => ({
   logout: () => dispatch(logout())
 })
 
-export default connect(msp, mdp)(ServerIndex)
+export default withRouter(connect(msp, mdp)(ServerIndex));

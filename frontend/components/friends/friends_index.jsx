@@ -6,6 +6,7 @@ import FriendRequestsContainer from './friends_requests_container';
 import { Switch, Link } from 'react-router-dom';
 import DmChatIndex from '../dm_chat/dm_chat_index_container';
 import DmChatShow from '../dm_chat/dm_chat_show_container';
+import CurrentUserContainer from '../profile_icon/current_user_container';
 
 class FriendIndex extends React.Component {
   constructor(props) {
@@ -39,10 +40,12 @@ class FriendIndex extends React.Component {
             <ul className="dm-index">
               
               <DmChatIndex friendships={this.props.friendships} users={this.props.users} />
-             
               
             </ul>
+
           </div>
+          <CurrentUserContainer />
+
         </div>
           <Switch>
 
@@ -55,7 +58,7 @@ class FriendIndex extends React.Component {
             <ProtectedRoute path="/home/friends/chat/:chat_id" component={DmChatShow} />
 
           </Switch>
-        
+
       </div>
     )
   }

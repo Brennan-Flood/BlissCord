@@ -138,7 +138,7 @@ class ServerIndex extends React.Component {
         }})}
       
           
-      
+
       </ul>
       
 
@@ -161,7 +161,6 @@ class ServerIndex extends React.Component {
 
         </Switch> 
         {!this.state.hide && <ServerCreateFormContainer toggleHide={this.toggleHide} />}
-
     </div>)
   }
 }

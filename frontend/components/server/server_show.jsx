@@ -5,6 +5,7 @@ import EditServerForm from './server_form/server_edit_form_container'
 import ChannelShowContainer from "../channel/channel_show_container";
 import ChannelCreateFormContainer from '../channel/channel_create_container';
 import { logoutCurrentUser } from '../../actions/session_actions';
+import CurrentUserContainer from '../profile_icon/current_user_container';
 
 class ServerShow extends React.Component {
   constructor(props) {
@@ -93,7 +94,8 @@ class ServerShow extends React.Component {
           </footer>
 
           <ChannelIndexContainer  serverId={this.props.server.id} updatePending={true} />
-          
+          <CurrentUserContainer />
+
         </div>
         <ProtectedRoute members={this.props.server.members} path={`/home/server/:serverId/channel/:channelId`} component={ChannelShowContainer} />
         

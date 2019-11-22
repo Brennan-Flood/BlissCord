@@ -18,6 +18,7 @@ class User < ApplicationRecord
     class_name: 'Channel'
 
   has_many :server_memberships,
+    dependent: :destroy,
     primary_key: :id,
     foreign_key: :member_id,
     class_name: "ServerMembership"
@@ -27,21 +28,25 @@ class User < ApplicationRecord
     source: :server
 
   has_many :channel_messages,
+    dependent: :destroy,
     primary_key: :id,
     foreign_key: :author_id,
     class_name: 'ChannelMessage'
 
  has_many :initiated_friendships,
+   dependent: :destroy,
    primary_key: :id,
    foreign_key: :initiator,
    class_name: 'Friendship'
  
  has_many :received_friendships,
+    dependent: :destroy,
    primary_key: :id,
    foreign_key: :recipient,
    class_name: 'Friendship'
 
   has_many :dms,
+    dependent: :destroy,
     primary_key: :id,
     foreign_key: :author_id,
     class_name: 'DmMessage'
@@ -53,6 +58,12 @@ class User < ApplicationRecord
   has_many :recipient_dm_chats,
     through: :received_friendships,
     source: :dm_chat_channel
+
+  has_one :profile_icon,
+    dependent: :destroy,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'ProfileIcon'
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

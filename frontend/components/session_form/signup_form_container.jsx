@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { signup } from '../../actions/session_actions';
 import SessionForm from './session_form';
+import { createProfile } from '../../actions/profile_actions';
 
 const mapStateToProps = ({ errors }) => ({
     errors: errors.session,
