@@ -102,7 +102,7 @@ class DmChatShow extends React.Component {
     let prevCreatedAt;
     let username;
     console.log(this.props)
-    if (Object.values(this.props.users).length < 3) {
+    if (Object.values(this.props.users).length < 2) {
       return <div></div>
     }
     if (this.props.chat) {
@@ -133,7 +133,7 @@ class DmChatShow extends React.Component {
 
           <footer className="message-footer">
             <form className="message-form" onSubmit={this.sendMessage}>
-              <input placeholder={`Message @`}
+              <input placeholder={`Message @Guest`}
                 className="message-input"
                 type="text"
                 onChange={this.update}

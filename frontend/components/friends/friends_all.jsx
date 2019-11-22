@@ -14,7 +14,7 @@ class FriendsAll extends React.Component {
   }
 
   componentDidUpdate() {
-    if (this.state.friends === null) {
+    if (this.state.friends === false) {
       this.props.fetchFriendships();
       this.props.fetchUsers();
       if (this.props.friendships) {
@@ -33,7 +33,7 @@ class FriendsAll extends React.Component {
   }
 
   render() {
-    if (Object.values(this.props.users).length > 3) {
+    if (Object.values(this.props.users).length > 1) {
     let friendsList;
     let friend;
     if (this.props.friendships) {
