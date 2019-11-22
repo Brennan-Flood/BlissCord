@@ -1,7 +1,7 @@
 
 # DiscordClone
 
-DiscordClone is a clone of gaming-oriented messaging app Discord. It was developed using  a Rails/PostgreSQL backend, with a React frontend.
+DiscordClone is a clone of the gaming-oriented messaging app Discord. It was developed using  a Rails/PostgreSQL backend, with a React frontend.
 
 ## Live Site!
 
