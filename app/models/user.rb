@@ -41,6 +41,19 @@ class User < ApplicationRecord
    foreign_key: :recipient,
    class_name: 'Friendship'
 
+  has_many :dms,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: 'DmMessage'
+
+  has_many :initiator_dm_chats,
+    through: :initiated_friendships,
+    source: :dm_chat_channel
+
+  has_many :recipient_dm_chats,
+    through: :received_friendships,
+    source: :dm_chat_channel
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user

@@ -25,6 +25,11 @@ export const fetchFriendships = () => dispatch => {
   .then((friendships) => dispatch(receiveFriendships(friendships)))
 }
 
+export const fetchFriendship = (id) => dispatch => {
+  return FriendshipUtil.fetchFriendship(id)
+  .then((friendship) => dispatch(receiveFriendship(friendship)))
+}
+
 export const createFriendship = (friendship) => (dispatch) => {
   return FriendshipUtil.createFriendship(friendship)
   .then((friendship) => dispatch(receiveFriendship(friendship)))

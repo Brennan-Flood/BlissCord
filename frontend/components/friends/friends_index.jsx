@@ -4,6 +4,8 @@ import FriendsAllContainer from './friends_all_container';
 import FriendsDiscoverContainer from './friends_discover_container';
 import FriendRequestsContainer from './friends_requests_container';
 import { Switch, Link } from 'react-router-dom';
+import DmChatIndex from '../dm_chat/dm_chat_index_container';
+import DmChatShow from '../dm_chat/dm_chat_show_container';
 
 class FriendIndex extends React.Component {
   constructor(props) {
@@ -11,9 +13,8 @@ class FriendIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUsers()
-    .then(() => this.props.fetchFriendships())
-
+    this.props.fetchUsers();
+    this.props.fetchFriendships();
   }
 
   render() {
@@ -36,23 +37,24 @@ class FriendIndex extends React.Component {
             </header>
 
             <ul className="dm-index">
-
+              
+              <DmChatIndex friendships={this.props.friendships} users={this.props.users} />
+             
+              
             </ul>
           </div>
         </div>
-          {/* <div className="friends-show"> */}
           <Switch>
 
             <ProtectedRoute path="/home/friends/all" component={FriendsAllContainer} users={this.props.users} friendship={this.props.friendships}/>
 
-          <ProtectedRoute path="/home/friends/requests" component={FriendRequestsContainer} users={this.props.users} friendships={this.props.friendships}/>
+            <ProtectedRoute path="/home/friends/requests" component={FriendRequestsContainer} users={this.props.users} friendships={this.props.friendships}/>
 
-          <ProtectedRoute path="/home/friends/discover" component={FriendsDiscoverContainer}/>
+            <ProtectedRoute path="/home/friends/discover" component={FriendsDiscoverContainer}/>
 
-            {/* <ProtectedRoute path="/home/friends/chat" component={}/> */}
+            <ProtectedRoute path="/home/friends/chat/:chat_id" component={DmChatShow} />
 
-            </Switch>
-          {/* </div> */}
+          </Switch>
         
       </div>
     )

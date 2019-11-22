@@ -7,7 +7,8 @@ class Api::FriendshipsController < ApplicationController
   end
 
   def show
-
+    @friendship = Friendship.find(params[:id])
+    render :show
   end
 
   def update

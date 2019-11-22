@@ -6,6 +6,7 @@ class FriendsAll extends React.Component {
     super(props);
     this.state = {freinds: false};
     this.removeFriend = this.removeFriend.bind(this);
+    this.handleChat = this.handleChat.bind(this);
   }
 
   componentDidMount() {
@@ -20,6 +21,10 @@ class FriendsAll extends React.Component {
         this.setState({ friends: true });
       }
     }
+  }
+
+  handleChat(id) {
+    this.props.createChat(id);
   }
 
   removeFriend(id) {
@@ -41,6 +46,7 @@ class FriendsAll extends React.Component {
           return (
           <div key={friend.id} className="friends-list-item">
               <h1 className="friends-list-name">{friend.otherUser.username}</h1>
+              <button className="chat-button" onClick={() => this.handleChat(friendship.id)}>Chat</button>
               <button className="remove-friend-button" onClick={() => this.removeFriend(friend.id)}>Remove Friend</button>
           </div>)
         } else {

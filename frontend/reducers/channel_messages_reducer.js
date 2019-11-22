@@ -1,4 +1,6 @@
 import { RECEIVE_ALL_CHANNEL_MESSAGES, RECEIVE_CHANNEL_MESSAGE, REMOVE_CHANNEL_MESSAGE } from '../actions/channel_message_actions';
+import { RECEIVE_CHANNEL } from '../actions/channel_actions';
+import { RECEIVE_SERVER, REMOVE_SERVER } from '../actions/server_actions';
 
 const ChannelMessagesReducer = (state = {}, action) => {
   Object.freeze(state);

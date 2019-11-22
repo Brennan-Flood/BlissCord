@@ -1,0 +1,20 @@
+.dm-chat-index {
+  display: flex;
+  flex-direction: column;
+}
+
+.dm-index-item {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.dm-index-name {
+  padding: 5px;
+}
+
+.dm-index-chat-button {
+  padding: 5px;
+  font-size: 12px;
+}

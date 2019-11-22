@@ -12,5 +12,10 @@ class Friendship < ApplicationRecord
     foreign_key: :recipient,
     class_name: 'User'
 
-  
+  has_one :dm_chat_channel,
+    dependent: :destroy,
+    primary_key: :id,
+    foreign_key: :friendship_id,
+    class_name: 'DmChatChannel'
+
 end
