@@ -33,7 +33,7 @@ class FriendIndex extends React.Component {
           <div className="dm-index-container">
             <header className="dm-index-header">
               <h1 className="dm-title">Direct Messages</h1>
-              <h1 className="create-group-dm-button">+</h1>
+              <h1 className="create-group-dm-button"></h1>
             </header>
 
             <ul className="dm-index">

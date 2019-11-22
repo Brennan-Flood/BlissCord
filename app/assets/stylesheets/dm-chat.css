@@ -1,17 +1,28 @@
 .dm-chat-index {
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
 }
 
 .dm-index-item {
-  margin: 10px;
+  color: gray;
+  margin: 1px;
+  margin-left: 4px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 14px;
 }
 
 .dm-index-name {
-  padding: 5px;
+  
+}
+
+.dm-index-item:hover {
+  color: white;
+  background-color:  rgba(73, 73, 73, 0.6);
+
 }
 
 .dm-index-chat-button {

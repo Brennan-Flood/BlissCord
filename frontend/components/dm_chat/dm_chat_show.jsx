@@ -101,13 +101,15 @@ class DmChatShow extends React.Component {
     let createdAt;
     let prevCreatedAt;
     let username;
-
+    console.log(this.props)
+    if (Object.values(this.props.users).length < 3) {
+      return <div></div>
+    }
     if (this.props.chat) {
       return (
         <div className="channel-show">
           <header className="channel-show-header">
-            <h1 className="channel-show-bullet">#</h1>
-            <h2 className="channel-show-name">{}</h2>
+            <h2 className="channel-show-name">{'@'}</h2>
           </header>
 
           <div id="message-index" className="message-index">
@@ -131,13 +133,13 @@ class DmChatShow extends React.Component {
 
           <footer className="message-footer">
             <form className="message-form" onSubmit={this.sendMessage}>
-              <input placeholder={`Message #`}
+              <input placeholder={`Message @`}
                 className="message-input"
                 type="text"
                 onChange={this.update}
                 value={this.state.body} />
 
-              <button>></button>
+              <button></button>
             </form>
           </footer>
 

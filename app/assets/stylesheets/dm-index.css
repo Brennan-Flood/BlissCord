@@ -9,6 +9,7 @@
   align-items: center;
   width: 90%;
   padding-top: 10px;
+  margin-left: 10px;
 }
 
 .dm-title {
@@ -23,8 +24,4 @@
 .create-group-dm-button {
   margin-right: 10px;
   font-size: 18px;
-}
-
-.dm-index {
-
 }

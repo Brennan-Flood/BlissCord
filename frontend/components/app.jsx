@@ -5,7 +5,7 @@ import Footer from './footer';
 
 const App = () => (
   <div className='page-container'>
-    <Header />
+    {/* <Header /> */}
     <MainComponent />
     <Footer />
   </div>

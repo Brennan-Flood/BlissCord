@@ -33,6 +33,7 @@ class FriendsAll extends React.Component {
   }
 
   render() {
+    if (Object.values(this.props.users).length > 3) {
     let friendsList;
     let friend;
     if (this.props.friendships) {
@@ -67,7 +68,9 @@ class FriendsAll extends React.Component {
           { friendsList }
         </ul>
       </div>
-    )
+    )} else {
+      return (<div></div>)
+    }
   }
 }
 

@@ -4,7 +4,6 @@ import { logout } from '../../actions/session_actions';
 import ServerIndex from './server_index'
 import { fetchUsers } from '../../actions/user_actions';
 
-
 const msp = (state) => ({
   curentUser: state.entities.users[state.session.id],
   servers: Object.values(state.entities.servers),

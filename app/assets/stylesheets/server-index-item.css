@@ -226,3 +226,24 @@
   width: 30px;
   height: 30px;
 }
+
+.logout {
+  display: flex;
+  justify-content: center;
+  color: #43b581;
+  height: 50px;
+  width: 50px;
+  background-color: rgb(54, 57, 62);
+  border-radius: 100%;
+  text-align: center;
+  margin: 5px;
+  font-size: 34px;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+.logout:hover {
+  color: red;
+  border-radius: 30%;
+  background-color: rgb(174, 35, 35);
+}

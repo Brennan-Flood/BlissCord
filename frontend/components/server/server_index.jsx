@@ -12,10 +12,18 @@ class ServerIndex extends React.Component {
     super(props);
     this.creatingServer = false;
     this.toggleHide = this.toggleHide.bind(this);
-    this.state = {hide: true, searchOn: false, updatePending: false, friendsOn: false};
+    this.state = {hide: true, searchOn: false, updatePending: false, friendsOn: false, logoutOn: false};
     this.toggleSearch = this.toggleSearch.bind(this);
     this.handleJoin = this.handleJoin.bind(this);
     this.toggleFriends = this.toggleFriends.bind(this);
+    this.toggleLogout = this.toggleLogout.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+  }
+
+  handleLogout(e) {
+    e.preventDefault();
+    this.props.logout();
+    this.props.history.push('/');
   }
 
   handleJoin() {
@@ -38,6 +46,10 @@ class ServerIndex extends React.Component {
 
   toggleFriends() {
     this.setState({friendsOn: !this.state.friendsOn});
+  }
+
+  toggleLogout() {
+    this.setState({logoutOn: !this.state.logoutOn})
   }
 
   render() {
@@ -93,6 +105,23 @@ class ServerIndex extends React.Component {
             <div className="server-index-item-hover">
               <p className="server-index-item-hover-name arrow_box" >Create a Server</p>
             </div>
+          </button>
+
+          <button onMouseEnter={this.toggleLogout} 
+            className="logout" 
+            onClick={this.handleLogout}
+            onMouseLeave={this.toggleLogout}
+          > 
+
+            {this.state.logoutOn ||
+              <img className="explore-image"
+                src="images/logoutoff.png"
+              />}
+
+            {!this.state.logoutOn ||
+              <img className="explore-image"
+                src="images/logouton.png"
+              />}
           </button>
 
               <h1 className="server-index-nav-end"></h1>

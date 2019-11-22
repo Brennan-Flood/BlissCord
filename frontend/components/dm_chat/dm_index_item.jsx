@@ -14,11 +14,14 @@ class DmMessage extends React.Component {
     let hours = messageDate.getHours();
     let minutes = messageDate.getMinutes();
     let minutesZero;
-
+    let calcedHours = hours % 12
+    if ( calcedHours === 0) {
+      calcedHours += 1
+    } 
     (minutes < 10 ? minutesZero = "0" : minutesZero = "")
     let half;
     (hours > 12 ? half = 'PM' : half = 'AM');
-    return `${month}/${day}/${year} at ${hours % 12}:${minutes}${minutesZero} ${half}`
+    return `${month}/${day}/${year} at ${calcedHours}:${minutes}${minutesZero} ${half}`
 
   }
 

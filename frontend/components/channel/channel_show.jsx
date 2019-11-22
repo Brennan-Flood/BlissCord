@@ -136,7 +136,7 @@ class ChannelShow extends React.Component {
               onChange={this.update}
               value={this.state.body} />
 
-            <button>></button>
+            <button></button>
           </form>
         </footer>
 
