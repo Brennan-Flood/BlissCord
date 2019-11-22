@@ -7,7 +7,7 @@ DiscordClone is a clone of the gaming-oriented messaging app Discord. It was dev
 
 https://discord-clone-1.herokuapp.com/
 
-## Tech
+## Technologies
 * PostgreSQL
 * Rails
 * React
