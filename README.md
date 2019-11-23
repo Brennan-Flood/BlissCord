@@ -11,6 +11,8 @@ https://discord-clone-1.herokuapp.com/
 * PostgreSQL
 * Rails
 * React
+* CSS/SCSS
+* JQuery
 * Heroku
 
 ## Features
@@ -36,6 +38,7 @@ https://discord-clone-1.herokuapp.com/
  ![alt text](https://github.com/Brennan-Flood/DiscordClone/blob/master/Screen%20Shot%202019-11-22%20at%206.58.19%20PM.png?raw=true)
  Finally, with a brief send method:
  ![alt text](https://github.com/Brennan-Flood/DiscordClone/blob/master/Screen%20Shot%202019-11-22%20at%206.59.14%20PM.png?raw=true)
+ 
  And thus, we have Live-Chat functionality!
  
  
