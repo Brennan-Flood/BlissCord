@@ -28,7 +28,17 @@ https://discord-clone-1.herokuapp.com/
  Users can find other Users that they wish to befriend, and issue a friend request. This friend request can be accepted or declined. Once friends, the two users can participate in a unique and private live-chat. 
  
  * Live-Chat
- As aforementioned, both channels and friendships house live-chats. These Chats feature live-updating whenever a new message has been received, as well as auto-scrolling for an improved user experience. This was achieved by use of Rails action-cables. 
+ As aforementioned, both channels and friendships house live-chats. These Chats feature live-updating whenever a new message has been received, as well as auto-scrolling for an improved user experience. 
+ ![alt text](https://github.com/Brennan-Flood/DiscordClone/blob/master/dm-gif.gif?raw=true)
+ This was achieved by use of Rails action-cables. The *channelchannel* action cable handles the creation of new messages to our channels, as opposed to a rails controller function.
+ ![alt text](https://github.com/Brennan-Flood/DiscordClone/blob/master/Screen%20Shot%202019-11-22%20at%206.55.07%20PM.png?raw=true)
+ After mounting our ActionCable's server to '/cable', we can then create an socket for the *channelchannel* in our react component.
+ ![alt text](https://github.com/Brennan-Flood/DiscordClone/blob/master/Screen%20Shot%202019-11-22%20at%206.58.19%20PM.png?raw=true)
+ Finally, with a brief send method:
+ ![alt text](https://github.com/Brennan-Flood/DiscordClone/blob/master/Screen%20Shot%202019-11-22%20at%206.59.14%20PM.png?raw=true)
+ And thus, we have Live-Chat functionality!
+ 
+ 
 
 
 
