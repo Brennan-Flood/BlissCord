@@ -44,7 +44,6 @@ class FriendIndex extends React.Component {
             </ul>
 
           </div>
-          <CurrentUserContainer />
 
         </div>
           <Switch>

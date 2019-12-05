@@ -96,22 +96,30 @@ class DmChatShow extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     let displayHeader = true
     let prevId;
     let createdAt;
     let prevCreatedAt;
     let username;
-    console.log(this.props)
     if (Object.values(this.props.users).length < 2) {
       return <div></div>
     }
     if (this.props.chat) {
+      let recipient = this.props.users[this.props.chat.friendship.recipient]
+      let initiator = this.props.users[this.props.chat.friendship.initiator]
+      let otherUser;
+      if ( this.props.currentUser === recipient) {
+        otherUser = initiator;
+      } else {
+        otherUser = recipient;
+      }
       return (
         <div className="channel-show">
           <header className="channel-show-header">
-            <h2 className="channel-show-name">{'@'}</h2>
+            <h2 className="channel-show-name">{`@${otherUser.username}`}</h2>
           </header>
-
+        
           <div id="message-index" className="message-index">
             {this.props.dms.map((message) => {
               if (message) {
@@ -124,7 +132,7 @@ class DmChatShow extends React.Component {
                 createdAt = message.created_at;
                 prevId = message.author_id;
                 username = { username: this.props.users[message.author_id].username }
-                return (<DmIndexItem username={username} prevCreatedAt={prevCreatedAt} displayHeader={displayHeader} key={message.id} message={message} />)
+                return (<DmIndexItem image_url={this.props.users[message.author_id].profile_icon.image_url} username={username} prevCreatedAt={prevCreatedAt} displayHeader={displayHeader} key={message.id} message={message} />)
               }
             })}
 
@@ -133,7 +141,7 @@ class DmChatShow extends React.Component {
 
           <footer className="message-footer">
             <form className="message-form" onSubmit={this.sendMessage}>
-              <input placeholder={`Message @Guest`}
+              <input placeholder={`Message @${otherUser.username}`}
                 className="message-input"
                 type="text"
                 onChange={this.update}

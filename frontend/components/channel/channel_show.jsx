@@ -17,7 +17,6 @@ class ChannelShow extends React.Component {
 
   componentDidMount() {
     let receiveMessage = this.props.receiveMessage.bind(this);
-    this.props.fetchChannel(this.props.serverId, this.getCurrentChannel());
     this.props.fetchChannelMessages(this.getCurrentChannel());
     let currentChannel = App.cable.subscriptions.create(
       { channel: "ChannelChannel", currentchannelId: this.getCurrentChannel()},
@@ -36,8 +35,6 @@ class ChannelShow extends React.Component {
     this.setState({currentChannel: currentChannel})
     this.updateScroll();
   }
-
-  
 
   getCurrentChannel() {
     let url = window.location.href.split('channel').slice(1);
@@ -90,7 +87,13 @@ class ChannelShow extends React.Component {
 
   sendMessage(e) {
     e.preventDefault();
-    this.state.currentChannel.speak({body: this.state.body, channel_id: this.state.channel_id, author_id: this.state.author_id});
+    
+    this.state.currentChannel.speak({
+      body: this.state.body, 
+      channel_id: this.state.channel_id,
+      author_id: this.state.author_id
+    });
+
     this.setState({body: ""});
   }
 
@@ -121,7 +124,7 @@ class ChannelShow extends React.Component {
               createdAt = message.created_at;
               prevId = message.author_id;
               username = {username: this.props.users[message.author_id].username}
-              return ( <Message username={username} prevCreatedAt={prevCreatedAt} displayHeader={displayHeader} key={message.id} message={message} /> )
+              return (<Message image_url={this.props.users[message.author_id].profile_icon.image_url} username={username} prevCreatedAt={prevCreatedAt} displayHeader={displayHeader} key={message.id} message={message} /> )
             }
           })}
 

@@ -19,3 +19,6 @@ class ChannelChannel < ApplicationCable::Channel
     ChannelChannel.broadcast_to('channel_channel', socket)
   end
 end
+
+
+

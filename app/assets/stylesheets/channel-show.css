@@ -5,6 +5,7 @@
   z-index: 0;
   width: 100%;
   background-color:rgb(54, 57, 66);
+  z-index: 101;
 }
 
 .channel-show-header {

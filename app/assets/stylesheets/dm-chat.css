@@ -30,3 +30,9 @@
   padding: 5px;
   font-size: 12px;
 }
+
+.chat-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}

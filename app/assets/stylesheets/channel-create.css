@@ -52,7 +52,7 @@
   left: 0;
   top: 0;
   background-color: rgba(2, 2, 2, 0.3);
-  z-index: 100;
+  z-index: 102;
 }
 
 .channel-cancel {

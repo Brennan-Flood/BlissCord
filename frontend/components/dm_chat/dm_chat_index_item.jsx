@@ -18,7 +18,7 @@ class DmChatIndexItem extends React.Component {
     if (friendship && this.props.users[friendship.recipient] && this.props.users[friendship.initiator]) {
     otherUser = (friendship.recipient === this.props.currentUser.id ? this.props.users[friendship.initiator] : this.props.users[friendship.recipient])
     return (
-      <Link username={otherUser.username} to={`/home/friends/chat/${this.props.chat.id}`}>
+      <Link to={`/home/friends/chat/${this.props.chat.id}`}>
         <li key={this.props.chat.id} className="dm-index-item">
           <h1 className="dm-index-name">{otherUser.username}</h1>
         </li>

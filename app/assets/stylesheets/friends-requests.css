@@ -4,6 +4,7 @@
   flex-direction: column;
   height: 100%;
   overflow: scroll;
+  z-index: 101;
 }
 
 .friend-request > :first-child {

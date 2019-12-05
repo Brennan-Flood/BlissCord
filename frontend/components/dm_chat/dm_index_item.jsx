@@ -21,7 +21,7 @@ class DmMessage extends React.Component {
     (minutes < 10 ? minutesZero = "0" : minutesZero = "")
     let half;
     (hours > 12 ? half = 'PM' : half = 'AM');
-    return `${month}/${day}/${year} at ${calcedHours}:${minutes}${minutesZero} ${half}`
+    return `${month}/${day}/${year} at ${calcedHours}:${minutesZero}${minutes} ${half}`
 
   }
 
@@ -29,6 +29,7 @@ class DmMessage extends React.Component {
     const header = () => {
       return (
         <header className="message-header">
+          <img className="chat-icon" src={this.props.image_url}/>
           <h1 className="message-author"> {this.props.username.username} </h1>
           <h1 className="message-timestamp">{this.parseDate(this.props.message.created_at)}</h1>
         </header>

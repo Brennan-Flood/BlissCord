@@ -7,7 +7,8 @@ const msp = (state, ownProps) => ({
   currentUser: state.entities.users[state.session.id],
   chat: state.entities.chats[ownProps.match.params.chat_id],
   dms: Object.values(state.entities.dms),
-  chatId: ownProps.match.params.chat_id
+  chatId: ownProps.match.params.chat_id,
+  friendships: state.entities.friendships,
 })
 
 const mdp = (dispatch) => ({

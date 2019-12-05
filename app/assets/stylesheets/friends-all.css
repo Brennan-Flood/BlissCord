@@ -1,9 +1,10 @@
 .friends-all-container {
   display: flex;
   flex-direction: column;
-  z-index: 0;
+  z-index: 101;
   width: 100%;
   background-color:rgb(54, 57, 66);
+
 }
 
 .friends-all-image {
