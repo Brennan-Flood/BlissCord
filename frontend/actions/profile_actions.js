@@ -12,7 +12,7 @@ export const createProfile = (userId) => dispatch => {
   .then((profile) => dispatch(receiveProfile(profile)))
 }
 
-export const updateProfile = (profileId, imageUrl) => {
-  return ProfileUtil.updateProfile(profileId, imageUrl)
+export const updateProfile = (profile) => dispatch => {
+  return ProfileUtil.updateProfile(profile)
   .then((profile) => dispatch(receiveProfile(profile)))
 }

@@ -7,7 +7,7 @@ const msp = (state) => ({
 })
 
 const mdp = (dispatch) => ({
-  updateProfile: (profileId, imageUrl) => dispatch(updateProfile(profileId, imageUrl))
+  updateProfile: (profile) => dispatch(updateProfile(profile))
 })
 
 export default connect(msp, mdp)(CurrentUser)

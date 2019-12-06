@@ -34,17 +34,41 @@ border-radius: 100%;
 }
 
 .icons-list {
-  position: relative;
-  bottom: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
   padding: 10px;
-  background-color: gray;
-  height: 300px;
+  background-color: rgb(68, 68, 68);
+  height: 370px;
   border-radius: 10px;
+  left: 0%;
+  z-index: 102;
+  width: 75px;
+  bottom: 50px;
 }
 
-.icons-list > img {
-  height: 30px;
-  width: 30px;
-  margin: 10px;
+.profile-button {
+  padding: 15px;
+  margin-left: 20px;
+  font-weight: 900;
+}
+
+.change-profile-button > img {
   border-radius: 100%;
+}
+
+.change-profile-button {
+  display: flex;
+  height: 35px;
+  width: 35px;
+  margin: 10px;
+  border-radius: 100px;
+  transition: 0.2s;
+}
+
+.change-profile-button:hover {
+  height: 40px;
+  width: 40px;
 }

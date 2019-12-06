@@ -5,10 +5,10 @@ export const createProfile = () => {
   })
 }
 
-export const updateProfile = (profile_id, image_url) => {
+export const updateProfile = (profile_icon) => {
   return $.ajax({
     method: 'PATCH',
-    url: `/api/profile_icons/`,
-    data: { profile_id, image_url }
+    url: `/api/profile_icons/${profile_icon.id}`,
+    data: {profile_icon}
   })
 }

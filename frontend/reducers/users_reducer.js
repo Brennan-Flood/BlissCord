@@ -13,8 +13,8 @@ const usersReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_PROFILE:
       nextState = Object.assign({}, state);
-      nextState[action.profile.id].image_url = action.profile.image_url;
-      nextState[action.profile.id].profile_id.id = action.profile.id;
+      userId = action.profile.user_id;
+      nextState[userId].profile_icon = action.profile;
       return nextState;
     case RECEIVE_CURRENT_USER:
       return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
