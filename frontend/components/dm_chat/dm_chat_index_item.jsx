@@ -20,6 +20,7 @@ class DmChatIndexItem extends React.Component {
     return (
       <Link to={`/home/friends/chat/${this.props.chat.id}`}>
         <li key={this.props.chat.id} className="dm-index-item">
+          <img className="dm-index-icon" src={otherUser.profile_icon.image_url} />
           <h1 className="dm-index-name">{otherUser.username}</h1>
         </li>
       </Link>

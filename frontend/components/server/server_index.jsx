@@ -13,10 +13,7 @@ class ServerIndex extends React.Component {
     this.creatingServer = false;
     this.toggleHide = this.toggleHide.bind(this);
     this.state = {hide: true, searchOn: false, updatePending: false, friendsOn: false, logoutOn: false};
-    this.toggleSearch = this.toggleSearch.bind(this);
     this.handleJoin = this.handleJoin.bind(this);
-    this.toggleFriends = this.toggleFriends.bind(this);
-    this.toggleLogout = this.toggleLogout.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
   }
 
@@ -40,63 +37,29 @@ class ServerIndex extends React.Component {
     this.setState({hide: !this.state.hide})
   }
 
-  toggleSearch() {
-    this.setState({searchOn: !this.state.searchOn});
-  }
-
-  toggleFriends() {
-    this.setState({friendsOn: !this.state.friendsOn});
-  }
-
-  toggleLogout() {
-    this.setState({logoutOn: !this.state.logoutOn})
-  }
-
   render() {
     let { servers } = this.props;
-    // if ( !servers ) {
-    //   return <h1>loading...</h1>
-    // }
-    
     return (
     <div className="servers">
         <ul className="server-index-container">
           <Link to="/home/friends/">
             <button 
-              onMouseEnter={this.toggleFriends}
-              onMouseLeave={this.toggleFriends}
               className="friends-button"
             >
-
-              {this.state.friendsOn ||
-                <img className="friends-image"
-                  src="images/friends-off.png"
-                />}
-
-              {!this.state.friendsOn ||
-                <img className="friends-image"
-                  src="images/friends-on.png"
-                />}
-
+              <i className="fas fa-users"></i>
+              <div className="friends-label">
+                <p className="friends-label-text arrow_box">Friends</p>
+              </div>
             </button>
           </Link>
 
           <Link to="/home/explore/" >
-
             <button
-              onMouseEnter={this.toggleSearch}
-              onMouseLeave={this.toggleSearch}
               className="explore-button">
-
-              {this.state.searchOn ||
-                <img className="explore-image"
-                  src="images/search-off.png"
-                />}
-
-              {!this.state.searchOn ||
-                <img className="explore-image"
-                  src="images/search-on.png"
-                />}
+              <i className="fas fa-search"></i>
+              <div className="explore-label">
+                <p className="explore-label-text arrow_box">Explore</p>
+              </div>
             </button>
           </Link>
 
@@ -106,22 +69,15 @@ class ServerIndex extends React.Component {
               <p className="server-index-item-hover-name arrow_box" >Create a Server</p>
             </div>
           </button>
-
-          <button onMouseEnter={this.toggleLogout} 
+          
+          <button
             className="logout" 
             onClick={this.handleLogout}
-            onMouseLeave={this.toggleLogout}
           > 
-
-            {this.state.logoutOn ||
-              <img className="explore-image"
-                src="images/logoutoff.png"
-              />}
-
-            {!this.state.logoutOn ||
-              <img className="explore-image"
-                src="images/logouton.png"
-              />}
+            <i className="fas fa-sign-out-alt"></i>
+            <div className="logout-label">
+              <p className="logout-label-text arrow_box">Logout</p>
+            </div>
           </button>
 
               <h1 className="server-index-nav-end"></h1>

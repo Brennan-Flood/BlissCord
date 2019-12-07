@@ -11,7 +11,7 @@ class CurrentUser extends React.Component {
   componentDidUpdate(oldProps) {
     if (oldProps !== this.props && this.props.currentUser.profile_icon !== undefined) {
       this.setState({ rendered: true });
-    } 
+    }
   }
 
   changeProfile(imageUrl) {

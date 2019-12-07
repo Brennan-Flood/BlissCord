@@ -46,9 +46,12 @@ class FriendsAll extends React.Component {
           };
           return (
           <div key={friend.id} className="friends-list-item">
+              <div className="friend-name">
+              <img className="dm-index-icon" src={friend.otherUser.profile_icon.image_url} />
               <h1 className="friends-list-name">{friend.otherUser.username}</h1>
-              <button className="chat-button" onClick={() => this.handleChat(friendship.id)}>Chat</button>
-              <button className="remove-friend-button" onClick={() => this.removeFriend(friend.id)}>Remove Friend</button>
+              </div>
+              <button className="chat-button" onClick={() => this.handleChat(friendship.id)}><i className="fas fa-comments"></i></button>
+              <button className="remove-friend-button" onClick={() => this.removeFriend(friend.id)}><i className="fas fa-user-times"></i></button>
           </div>)
         } else {
           return;

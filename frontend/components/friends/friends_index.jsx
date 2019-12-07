@@ -27,16 +27,24 @@ class FriendIndex extends React.Component {
           </div>
 
           <ul className="friendship-index-nav">
-            <Link to="/home/friends/all"><li className="all-friends-link">All Friends</li></Link>
-            <Link to="/home/friends/requests"><li className="friend-requests-link">Friend requests</li></Link>
-            <Link to="/home/friends/discover"><li className="find-friends-link">Find Friends</li></Link>
+            <Link className="all-friends-link" to="/home/friends/all">
+              <i className="fas fa-users"></i>
+              <li >All Friends</li>
+            </Link>
+            <Link className="friend-requests-link" to="/home/friends/requests">
+              <i className="fas fa-user-friends"></i>
+              <li >Friend requests</li>
+            </Link>
+            <Link className="find-friends-link" to="/home/friends/discover">
+              <i className="fas fa-search"></i>
+              <li>Find Friends</li>
+            </Link>
           </ul>
           <div className="dm-index-container">
             <header className="dm-index-header">
               <h1 className="dm-title">Direct Messages</h1>
               <h1 className="create-group-dm-button"></h1>
             </header>
-
             <ul className="dm-index">
               
               <DmChatIndex friendships={this.props.friendships} users={this.props.users} />

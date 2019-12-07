@@ -23,10 +23,10 @@
 }
 
 .current-user-image {
-margin-left: 10px;
-width: 40px;
-height: 40px;
-border-radius: 100%;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
 }
 
 .friends-index-container > .current-user-bar {

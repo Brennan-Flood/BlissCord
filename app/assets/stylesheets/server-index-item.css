@@ -206,6 +206,7 @@
 
 .friends-button {
   border-radius: 100%;
+  color: #43b581;
   margin: 5px;
   z-index: 10;
   height: 50px;
@@ -216,10 +217,14 @@
   transition: 0.3s;
 }
 
+.friends-button > i {
+  font-size: 22px;
+}
+
 .friends-button:hover {
   background-color: #43b581;
   border-radius: 30%;
-
+  color: white;
 }
 
 .friends-image {
@@ -230,7 +235,7 @@
 .logout {
   display: flex;
   justify-content: center;
-  color: #43b581;
+  color: rgb(174, 35, 35);
   height: 50px;
   width: 50px;
   background-color: rgb(54, 57, 62);
@@ -242,8 +247,130 @@
   transition: 0.3s;
 }
 
+.logout > i {
+  font-size: 24px;
+}
+
 .logout:hover {
-  color: red;
+  color: white;
   border-radius: 30%;
   background-color: rgb(174, 35, 35);
+}
+
+.friends-label {
+  height: 14px;
+  max-width: max-content;
+  min-width: min-content;
+  position: absolute;
+  visibility: hidden;
+  font-size: 10px;
+  left: 65px;
+  background-color: black;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 100;
+  transition-delay: 0s;
+}
+
+.friends-label-text {
+  color: white;
+  text-align: center;
+  max-width: max-content;
+  min-width: min-content;
+  background-color: black;
+  white-space: nowrap;
+  max-width: 1000px;
+  z-index: 100;
+  transition-delay: 0s;
+}
+
+.friends-button:hover .friends-label {
+  visibility: visible;
+  transition: 0.3s;
+}
+
+.create-server-label {
+  height: 14px;
+  max-width: max-content;
+  min-width: min-content;
+  position: absolute;
+  visibility: hidden;
+  font-size: 10px;
+  z-index: 4;
+  bottom: 60px;
+  left: 60px;
+  background-color: black;
+  padding: 5px;
+  border-radius: 5px;
+  transition-delay: 0s;
+}
+
+.create-server-label-text {
+  color: white;
+  text-align: center;
+  max-width: max-content;
+  min-width: min-content;
+  background-color: black;
+  white-space: nowrap;
+  max-width: 1000px;
+}
+
+.explore-label {
+  height: 14px;
+  max-width: max-content;
+  min-width: min-content;
+  position: absolute;
+  visibility: hidden;
+  font-size: 10px;
+  z-index: 100;
+  left: 65px;
+  background-color: black;
+  padding: 5px;
+  border-radius: 5px;
+  transition-delay: 0s;
+}
+
+.explore-label-text {
+  color: white;
+  text-align: center;
+  max-width: max-content;
+  min-width: min-content;
+  background-color: black;
+  white-space: nowrap;
+  max-width: 1000px;
+}
+
+.explore-button:hover .explore-label {
+  visibility: visible;
+  transition: 0.3s;
+}
+
+.logout-label {
+  height: 14px;
+  max-width: max-content;
+  min-width: min-content;
+  position: absolute;
+  visibility: hidden;
+  font-size: 10px;
+  z-index: 4;
+  left: 65px;
+  background-color: black;
+  padding: 5px;
+  border-radius: 5px;
+  transition-delay: 0s;
+}
+
+.logout-label-text {
+  color: white;
+  text-align: center;
+  max-width: max-content;
+  min-width: min-content;
+  background-color: black;
+  white-space: nowrap;
+  max-width: 1000px;
+}
+
+.logout:hover .logout-label {
+  visibility: visible;
+  transition: 0.3s;
 }

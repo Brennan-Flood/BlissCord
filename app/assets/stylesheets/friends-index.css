@@ -52,21 +52,42 @@
 }
 
 .all-friends-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color: gray;
   padding: 10px;
   border-radius: 5px;
+}
+
+.all-friends-link > li {
+  margin-left: 10px;
 }
 
 .friend-requests-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color: gray;
   padding: 10px;
   border-radius: 5px;
 }
 
+.friend-requests-link > li {
+  margin-left: 10px;
+}
+
 .find-friends-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color: gray;
   padding: 10px;
   border-radius: 5px;
+}
+
+.find-friends-link > li {
+  margin-left: 10px;
 }
 
 .all-friends-link:hover {

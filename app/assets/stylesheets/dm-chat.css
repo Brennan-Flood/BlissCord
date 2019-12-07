@@ -10,7 +10,7 @@
   margin-left: 4px;
   padding: 10px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
   font-size: 14px;
   border-radius: 5px;
@@ -35,4 +35,11 @@
   width: 30px;
   height: 30px;
   border-radius: 100%;
+}
+
+.dm-index-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin-right: 10px;
 }
