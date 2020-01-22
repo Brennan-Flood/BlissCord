@@ -52,7 +52,8 @@ class FriendsAll extends React.Component {
               </div>
               <button className="chat-button" onClick={() => this.handleChat(friendship.id)}><i className="fas fa-comments"></i></button>
               <button className="remove-friend-button" onClick={() => this.removeFriend(friend.id)}><i className="fas fa-user-times"></i></button>
-          </div>)
+          </div>
+          )
         } else {
           return;
         }
@@ -63,7 +64,7 @@ class FriendsAll extends React.Component {
     return (
       <div className="friends-all-container">
         <header className="friends-all-header">
-          <img className="friends-all-image" src="images/all-friends.png"/>
+          <i className="fas fa-users"></i>
           <h1  className="friends-all-title">Friends</h1>
         </header>
 

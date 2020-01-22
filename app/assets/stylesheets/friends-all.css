@@ -24,6 +24,18 @@
 	-moz-box-shadow: 0 1px 0px 0px rgb(39, 39, 39);
 	box-shadow: 0 1px 0px 0px rgb(39, 39, 39);
   flex-direction: row;
+  align-items: center;
+}
+
+.friends-all-header > i {
+  margin-right: 10px;
+  color: white;
+}
+
+.friend-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .friends-all-title {

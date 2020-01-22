@@ -9,8 +9,10 @@ class CurrentUser extends React.Component {
   }
 
   componentDidUpdate(oldProps) {
-    if (oldProps !== this.props && this.props.currentUser.profile_icon !== undefined) {
-      this.setState({ rendered: true });
+    if (this.props.currentUser) {
+      if (oldProps !== this.props && this.props.currentUser.profile_icon !== undefined) {
+        this.setState({ rendered: true });
+      }
     }
   }
 

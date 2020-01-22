@@ -36,7 +36,7 @@ class FriendsDiscover extends React.Component {
       <div className="friends-all-container">
         <div className="friends-all-container">
           <header className="friends-all-header">
-            <img className="friends-all-image" src="images/all-friends.png" />
+            <i className="fas fa-search"></i>
             <h1 className="friends-all-title">Discover Friends</h1>
           </header>
         </div>
