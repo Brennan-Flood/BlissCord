@@ -1,7 +1,7 @@
 
-# DiscordClone
+# BlissCord
 
-DiscordClone is a clone of the gaming-oriented messaging app Discord. It was developed using  a Rails/PostgreSQL backend, with a React frontend.
+BlissCord is a clone of the gaming-oriented messaging app Discord. It was developed using a Rails/PostgreSQL backend, with a React frontend.
 
 ## Live Site!
 
@@ -18,7 +18,7 @@ https://discord-clone-1.herokuapp.com/
 ## Features
 
 * Users
-  Users can register with DiscordClone after providing a username and password.        Alternatively, a demo-user has been provided for sampling purposes 
+  Users can register with BlissCord after providing a username and password.        Alternatively, a demo-user has been provided for sampling purposes 
 
 * Servers
   Users have the oppurtunity to create servers, delete said servers, edit the name of those servers, and join servers that other users have created. Once you've created or joined a server, you will gain access to that server's channels.

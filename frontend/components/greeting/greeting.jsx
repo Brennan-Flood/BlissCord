@@ -5,14 +5,24 @@ import { Link } from 'react-router-dom';
 
 const Splash = ({ currentUser, logout }) => {
   const sessionLinks = () => (
+    <div className="splash-background">
     <nav className="login-signup">
-      <h1 className='intro'>It's time to ditch Skype and TeamSpeak.</h1>
-      <h2 className='subIntro'>All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone. Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life.</h2>
+      <div className="splash-title">
+        <h1 className='intro'> Start Chatting Today with BlissCord </h1> 
+        <img className="splash-icon" src="https://study-fi-public.s3.amazonaws.com/discord-icon.png" />
+      </div>
+      <h2 className='subIntro'>Text-based live messaging app inspired by 'Discord'. Add friends, send them messages, start group chats, create servers and channels, enjoy.</h2>
       <div className="session-buttons">
       <Link to="/login"><h1 className="login-button">Login</h1></Link>
       <Link to="/signup"><h1 className="signup-button">Sign up</h1></Link>
       </div>
+      
     </nav>
+      <div className="splash-links">
+        <h1>Created by Brennan Flood</h1>
+        <a href="https://github.com/Brennan-Flood/BlissCord"><i class="fab fa-github-square"></i></a>
+      </div>
+    </div>
   );
   // const personalGreeting = () => (
   //   <hgroup className="header-group">

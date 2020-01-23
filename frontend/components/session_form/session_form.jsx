@@ -39,7 +39,7 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <img className="background-image" src="/images/login-background.jpg"></img>
+        <img className="background-image" src="https://study-fi-public.s3.amazonaws.com/login-background.jpg"></img>
 
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
