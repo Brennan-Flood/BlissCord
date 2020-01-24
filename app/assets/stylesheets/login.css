@@ -58,7 +58,6 @@
   font-family: Helvetica;
   font-weight: 200;
   padding-top: 20px;
-
 }
 
 .login-greeting {
@@ -181,4 +180,5 @@
 
 .splash-links > a {
   font-size: 28px;
+  margin-left: 5px;
 }

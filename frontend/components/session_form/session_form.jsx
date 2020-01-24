@@ -44,7 +44,7 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
           <div className="login-form">
-            <h1 className="login-greeting">Welcome To Discord-Clone</h1>
+            <h1 className="login-greeting">Welcome To BlissCord</h1>
             <h1 className="login-errors">{this.renderErrors()}</h1>
             <br/>
             <label>

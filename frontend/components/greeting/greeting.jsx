@@ -21,6 +21,8 @@ const Splash = ({ currentUser, logout }) => {
       <div className="splash-links">
         <h1>Created by Brennan Flood</h1>
         <a href="https://github.com/Brennan-Flood/BlissCord"><i class="fab fa-github-square"></i></a>
+        <a href="https://brennan-flood.github.io/"><i class="far fa-id-card"></i></a>
+        <a href="https://www.linkedin.com/in/brennan-flood/"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
   );
