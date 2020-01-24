@@ -19,7 +19,7 @@ class ChannelCreateForm extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     return (
       <div className="channel-create-background">
         <form className='channel-create-form' onSubmit={this.handleSubmit}>

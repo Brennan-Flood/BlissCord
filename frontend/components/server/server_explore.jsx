@@ -18,7 +18,7 @@ class ServerExplore extends React.Component {
         {this.props.servers.map((server) => {
           if (!this.props.memberedServerIds.includes(server.id)) {
             if (server.members) {
-            console.log(Object.entries(server.members).length);
+            // console.log(Object.entries(server.members).length);
             memberCount = (Object.entries(server.members).length ? Object.entries(server.members).length : 0);
             } else {
             memberCount = 0;
