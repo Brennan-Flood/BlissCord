@@ -105,7 +105,7 @@ class DmChatShow extends React.Component {
     if (Object.values(this.props.users).length < 2) {
       return <div></div>
     }
-    if (this.props.chat) {
+    if (this.props.chat && this.props.chat.friendship) {
       let recipient = this.props.users[this.props.chat.friendship.recipient]
       let initiator = this.props.users[this.props.chat.friendship.initiator]
       let otherUser;
@@ -154,7 +154,8 @@ class DmChatShow extends React.Component {
         </div>
       )
     } else {
-      return <h1>loading</h1>
+      window.location.reload();
+      return <h1></h1>
     }
 
 
