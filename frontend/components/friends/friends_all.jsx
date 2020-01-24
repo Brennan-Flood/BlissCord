@@ -23,8 +23,8 @@ class FriendsAll extends React.Component {
     }
   }
 
-  handleChat(id) {
-    this.props.createChat(id);
+  handleChat(friendship) {
+    this.props.createChat(friendship);
   }
 
   removeFriend(id) {
@@ -50,7 +50,7 @@ class FriendsAll extends React.Component {
               <img className="dm-index-icon" src={friend.otherUser.profile_icon.image_url} />
               <h1 className="friends-list-name">{friend.otherUser.username}</h1>
               </div>
-              <button className="chat-button" onClick={() => this.handleChat(friendship.id)}><i className="fas fa-comments"></i></button>
+              <button className="chat-button" onClick={() => this.handleChat(friendship)}><i className="fas fa-comments"></i></button>
               <button className="remove-friend-button" onClick={() => this.removeFriend(friend.id)}><i className="fas fa-user-times"></i></button>
           </div>
           )

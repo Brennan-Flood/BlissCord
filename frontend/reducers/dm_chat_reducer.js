@@ -7,7 +7,7 @@ const DmChatReducer = (state = {}, action) => {
     case RECEIVE_ALL_CHATS:
       return action.chats;
     case RECEIVE_CHAT:
-      return Object.assign({}, state, { [action.chat.id]: action.chat });
+      return Object.assign({}, state, { [action.chat.id]: {id: action.chat.id, friendship_id: action.chat.friendship_id, friendship: action.friendship} });
     default:
       return state;
   }

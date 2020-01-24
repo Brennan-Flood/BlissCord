@@ -8,9 +8,10 @@ const receiveAllChats = (chats) => ({
   chats
 })
 
-const receiveChat = (chat) => ({
+const receiveChat = (chat, friendship) => ({
   type: RECEIVE_CHAT,
-  chat
+  chat,
+  friendship
 })
 
 export const fetchChats = () => (dispatch) => {
@@ -18,7 +19,7 @@ export const fetchChats = () => (dispatch) => {
   .then(chats => dispatch(receiveAllChats(chats)))
 }
 
-export const createChat = (friendshipId) => (dispatch) => {
-  return DmChatUtil.createChat(friendshipId)
-  .then(chat => dispatch(receiveChat(chat)))
+export const createChat = (friendship) => (dispatch) => {
+  return DmChatUtil.createChat(friendship.id)
+  .then(chat => dispatch(receiveChat(chat, friendship)))
 }
