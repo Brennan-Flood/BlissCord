@@ -5,7 +5,7 @@ BlissCord is a clone of the gaming-oriented messaging app Discord. It was develo
 
 ## Live Site!
 
-https://discord-clone-1.herokuapp.com/
+https://blisscord.herokuapp.com/#/
 
 ## Technologies
 * PostgreSQL
